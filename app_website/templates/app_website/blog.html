@@ -1,0 +1,22 @@
+{% extends 'app_website/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h1>Blog Page</h1>
+        <table class="table table-hover table-dark">
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <!-- <th scope="row">1</th> -->
+                    <td>{{ post.posted_at|date:"j M" }}</td>
+                    <td>{{ post.title }}</td>
+                    <td class="read_btn_wrapper"> <a href="{% url 'view_post' post_id=post.id %}" class="read_btn btn btn-outline-primary btn-sm">Read <i class="read_arrow bi bi-arrow-right"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock %}
