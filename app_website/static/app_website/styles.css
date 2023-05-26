@@ -1,0 +1,161 @@
+:root {
+  --backgroundColor: #282c35;
+  --bodyColor: #ffffff;
+  --bodyFont: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --white: #ffffff;
+  --brand: #e71d36;
+  --accent: #e3d26f;
+  --muted: #a9a9a9;
+  --base-size: 0.8rem; /* 16px */
+  --golden-ratio: 1.618;
+  --base-size-sm: 0.75rem;
+  --golden-ratio-sm: 1.333;
+  --button-color-primary: #ffffff;
+  --pill-bg-color: #41060c;
+  --pill-text-color: #eaa7ba;
+}
+
+body {
+  background: var(--backgroundColor);
+  color: var(--bodyColor);
+  font-family: var(--bodyFont);
+}
+
+.muted {
+  color: var(--muted) !important;
+}
+
+ /* NAV STYLES */
+
+nav.navbar {
+  background-color: var(--backgroundColor);
+  color: var(--white);
+}
+
+nav a.navbar-brand,
+nav a.navbar-brand:hover {
+  color: var(--white);
+}
+
+nav a.nav-link {
+  color: var(--white);
+  border-bottom-color: var(--white);
+  border-bottom: 0.15em solid;
+  transition: border-bottom-color 0.25s ease;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  border-bottom-color: var(--brand);
+  color: var(--white);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--brand);
+  border-bottom-color: var(--brand);
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: end;
+  }
+}
+
+/* // MASTHEAD STYLES */
+
+.masthead {
+  min-height: 57vh;
+}
+
+.profile_headshot {
+  height: 15em;
+  border-radius: 50%;
+}
+
+/* font sizings */
+.masthead p {
+  font-size: var(--base-size) !important;
+}
+
+.masthead h3 {
+  /* 1.618 times the base size */
+  font-size: calc(var(--base-size) * var(--golden-ratio)) !important;
+}
+
+.masthead h2 {
+  /* 1.618 times the h3 size */
+  font-size: calc(var(--base-size) * var(--golden-ratio) * var(--golden-ratio)) !important;
+}
+
+.masthead h1 {
+  /* 1.618 times the h2 size */
+  font-size: calc(
+    var(--base-size) * var(--golden-ratio) * var(--golden-ratio) * var(--golden-ratio)
+  ) !important;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 860px;
+  }
+}
+
+/* // BUTTONS */
+.btn-outline-primary {
+  color: var(--button-color-primary);
+  border-color: var(--button-color-primary);
+  border-radius: 0;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--brand);
+  border-color: var(--brand);
+}
+
+/* ANIMATIONS */
+
+.main_content {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* // FEATURED ARTICLES */
+section.featured-articles > .title-col {
+  border-bottom: 1px solid var(--brand);
+}
+
+/* // RECENT PROJECTS */
+section.recent-projects > .title-col {
+  border-bottom: 1px solid var(--brand);
+}
+
+.project-card .card-text {
+  font-size: small;
+}
+
+/* // CARDS */
+.card {
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+}
+
+/* // PILLS */
+.badge.pill {
+  color: var(--pill-text-color);
+  background-color: var(--pill-bg-color);
+}
+
+.badge.pill:not(:first-child) {
+  margin-left: 1em;
+}
