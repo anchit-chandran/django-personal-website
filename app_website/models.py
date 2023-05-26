@@ -16,9 +16,10 @@ class BlogPost(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ManyToManyField(Category)
     title = models.CharField(max_length=100)
-    header_img = models.URLField(max_length=500)
-    content = models.TextField(max_length=2000)
+    header_img = models.URLField(max_length=500, default=None, null=True)
+    content = models.TextField(max_length=5000)
     featured = models.BooleanField()
     
     def __str__(self):
-        return f"Post {self.title} by {self.author}"
+        featured = "*" if self.featured else ""
+        return f"{featured}Post {self.title} by {self.author}"

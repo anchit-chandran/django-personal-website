@@ -24,17 +24,17 @@
     </div>
     <div class="col px-0">
         <div class="row py-3">
-
-            <div class="col-4">
-                <div class="card">
-                    <img src="https://placehold.co/600x400" alt="" class="card-img-top">
-                    <div class="card-body px-0">
-                        <p class="card-title">POST TITLE</p>
-                        <p class="card-text"><small class="text-body-secondary muted">POST DATE</small></p>
+            {% for post in posts %}
+                <div class="col-4">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400" alt="" class="card-img-top">
+                        <div class="card-body px-0">
+                            <p class="card-title">{{ post.title }}</p>
+                            <p class="card-text"><small class="text-body-secondary muted">{{ post.posted_at|date:"j M Y" }}</small></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            {% endfor %}
         </div>
     </div>
 </section>
