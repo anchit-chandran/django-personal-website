@@ -11,5 +11,6 @@ RUN pip3 install -r requirements.txt
 # COPY ENTIRE CONTENTS OF FOLDER INTO CONTAINER
 COPY . .
 
+# RUN SETUP COMMANDS
 CMD ["python3","manage.py","runserver", "0.0.0.0:8000"]
 
