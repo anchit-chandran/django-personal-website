@@ -5,7 +5,9 @@
     <div class="col">
         <img src="{{ post.header_img }}" alt="">
         <h1>{{ post.title }}</h1>
-        <p>{{ post.content }}</p>
+        {% autoescape off %}
+        <p>{{ post.content | safe }}</p>
+        {% endautoescape %}
     </div>
 </div>
 {% endblock %}
