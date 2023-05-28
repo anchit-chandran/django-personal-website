@@ -160,11 +160,7 @@ section.recent-projects > .title-col {
   margin-left: 1em;
 }
 
-/* BLOG */
-.read_btn {
-  
-}
-
-.read_arrow {
-  
+/* POSTS */
+.markdown-section h1 {
+  margin-top: 4rem;
 }

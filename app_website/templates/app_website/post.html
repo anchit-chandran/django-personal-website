@@ -1,13 +1,14 @@
 {% extends 'app_website/base.html' %}
 
+{% load markdown_extras %}
+
+
 {% block content %}
-<div class="row">
+<div class="row markdown-section">
     <div class="col">
         <img src="{{ post.header_img }}" alt="">
         <h1>{{ post.title }}</h1>
-        {% autoescape off %}
-        <p>{{ post.content | safe }}</p>
-        {% endautoescape %}
+        <p>{{ post.content | markdown | safe }}</p>
     </div>
 </div>
 {% endblock %}
