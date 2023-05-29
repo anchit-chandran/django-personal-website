@@ -25,15 +25,15 @@
     <div class="col px-0">
         <div class="row py-3">
             {% for post in posts %}
-                <div class="col-4">
-                    <div class="card">
-                        <img src="https://placehold.co/600x400" alt="" class="card-img-top">
-                        <div class="card-body px-0">
-                            <p class="card-title">{{ post.title }}</p>
-                            <p class="card-text"><small class="text-body-secondary muted">{{ post.posted_at|date:"j M Y" }}</small></p>
-                        </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="https://placehold.co/600x400" alt="" class="card-img-top">
+                    <div class="card-body px-0">
+                        <p class="card-title">{{ post.title }}</p>
+                        <p class="card-text"><small class="text-body-secondary muted">{{ post.posted_at|date:"j M Y"}}</small></p>
                     </div>
                 </div>
+            </div>
             {% endfor %}
         </div>
     </div>
@@ -60,8 +60,7 @@
                             obcaecati necessitatibus ut molestias sint hic inventore. Deserunt.</p>
                         <div class="row">
                             <div class="col d-flex justify-content-start pills">
-                                assign sorted_tags = post.tags | sort_tags
-                                for tag in sorted_tags
+                                
                                 <div class="p-2 badge pill">tag</div>
 
                             </div>

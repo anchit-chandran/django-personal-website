@@ -4,11 +4,20 @@
 
 
 {% block content %}
-<div class="row markdown-section">
+<div class="row markdown-section justify-content-center">
     <div class="col">
-        <img src="{{ post.header_img }}" alt="">
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.content | markdown | safe }}</p>
+        <div class="post-title-wrapper py-4 mt-5">
+            <p class="text-center meta"><small>{{ post.posted_at|date:"j M Y"}} • {{ reading_time }} mins</small></p>
+            <h1 class="text-center">{{ post.title }}</h1>
+        </div>
+
+            <img src="{{ post.header_img }}" alt="" class="img header-img">
+
+        <div class="row justify-content-center">
+            <div class="col-10 post-content">
+                {{ post.content | markdown | safe }}
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

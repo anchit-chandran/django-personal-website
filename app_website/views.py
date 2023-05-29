@@ -4,18 +4,27 @@ from django.http import HttpResponse
 from .models import (
     BlogPost,
 )
-
+from .general_functions import (
+    calculate_reading_time,
+)
 
 # Create your views here.
 def index(request):
-    featured_blog_posts = BlogPost.objects.filter(featured=True)
 
+    if BlogPost.objects.filter(featured=True).exists():
+        featured_blog_posts = BlogPost.objects.filter(featured=True)
+    else:
+        featured_blog_posts = BlogPost.objects.all()[:3]
+        
+        
     return render(request, "app_website/index.html", {"posts": featured_blog_posts})
 
 
 def view_post(request, post_id):
     post = BlogPost.objects.get(id=post_id)
-    return render(request, "app_website/post.html", {'post':post})
+
+    reading_time = calculate_reading_time(post.content)
+    return render(request, "app_website/post.html", {'post':post, 'reading_time':reading_time})
 
 
 def about(request):
