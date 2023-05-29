@@ -16,7 +16,7 @@
   --pill-bg-color: #41060c;
   --pill-text-color: #eaa7ba;
 
-
+  --table-hover-bg: #41060c3d;
 }
 
 body {
@@ -27,6 +27,11 @@ body {
 
 a {
   color: var(--link-color);
+}
+
+a.span-link {
+  color: var(--white);
+  text-decoration: none;
 }
 
 .muted {
@@ -139,10 +144,10 @@ nav a.nav-link {
 }
 
 h4.index-sub-title {
-    font-size: 1rem;
-    letter-spacing: 0.05rem;
-    text-transform: uppercase;
-    font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 /* // FEATURED ARTICLES */
@@ -164,7 +169,6 @@ section.recent-projects > .title-col {
 .project-card .card-text {
   font-size: small;
 }
-
 
 /* // CARDS */
 .card {
@@ -201,8 +205,6 @@ section.recent-projects > .title-col {
   font-weight: 800;
 }
 
-
-
 .header-img {
   width: 100%;
 }
@@ -235,4 +237,28 @@ section.recent-projects > .title-col {
 .markdown-section .post-content img {
   max-width: 100%;
   height: auto;
+}
+
+/* PAGES */
+
+.page-title-wrapper {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  margin-top: 3rem !important;
+}
+.page-title-wrapper > h1 {
+  line-height: 1.2;
+  letter-spacing: -0.1rem;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+/* TABLES */
+.table.table-dark {
+  --bs-table-bg: none;
+  
+}
+
+.table.table-dark:hover {
+  --bs-table-hover-bg: var(--table-hover-bg);
 }

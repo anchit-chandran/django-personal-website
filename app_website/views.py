@@ -7,6 +7,7 @@ from .models import (
 from .general_functions import (
     calculate_reading_time,
 )
+from .constants import DEFAULT_HEADER_IMG_URL
 
 # Create your views here.
 def index(request):
@@ -17,7 +18,7 @@ def index(request):
         featured_blog_posts = BlogPost.objects.all()[:3]
         
         
-    return render(request, "app_website/index.html", {"posts": featured_blog_posts})
+    return render(request, "app_website/index.html", {"posts": featured_blog_posts, 'DEFAULT_HEADER_IMG_URL': DEFAULT_HEADER_IMG_URL.DEFAULT_HEADER_IMG_URL})
 
 
 def view_post(request, post_id):
