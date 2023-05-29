@@ -3,6 +3,7 @@ from datetime import datetime, time
 
 from django.core.management.base import BaseCommand
 from django.conf import settings
+from django.utils.timezone import make_aware
 
 from app_website.models import BlogPost
 
@@ -32,15 +33,15 @@ def run_blog_post_seed():
             # Open the file for reading
             with open(filepath, "r") as file:
                 # Read the contents of the file
-                
+
                 contents = file.readlines()
 
                 # header url
                 header_img_url = contents[-1]
-                
+
                 # convert back to original
-                contents = ''.join(contents[:-1])
-                
+                contents = "".join(contents[:-1])
+
                 # get date from name
                 published_on_raw = filename[:8]
 
@@ -49,9 +50,11 @@ def run_blog_post_seed():
 
                 # convert into datetime object
                 date_string = published_on_str
-                published_on = datetime.strptime(
+                published_on = make_aware(
+                    datetime.strptime(
                     date_string, "%Y-%m-%d"
-                )  # .replace(hour=default_time.hour, minute=default_time.minute, second=default_time.second)
+                )
+                )
 
                 title = filename[9:].replace(".md", "").replace("-", " ").title()
 
@@ -61,7 +64,6 @@ def run_blog_post_seed():
                         title=title,
                         content=contents,
                         header_img=header_img_url,
-        
                     )
                     print(f"Saving {post}")
                     post.save()
