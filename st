@@ -4,5 +4,5 @@
 # chmod +x <filename> is the command to do this on unixy systems
 
 # starts server
-docker run --publish 8000:8000 python-django 
+docker-compose up
 
