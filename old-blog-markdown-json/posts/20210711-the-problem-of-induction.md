@@ -113,3 +113,5 @@ Cool things I've come across this week:
 * 🎙 [The Beginning of Infinity (podcast)](https://open.spotify.com/episode/4LmKkvbo0n45YBmZIUABDT?si=300121bcae254e92) – one of my idols has dropped an episode about one of the most fascinating books I’ve read.
 
 
+
+\_\_GHOST\_URL\_\_/content/images/2021/07/photo-1518837695005-2083093ee35b.jpg

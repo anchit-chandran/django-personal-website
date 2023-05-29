@@ -74,3 +74,6 @@ Cool things I've come across this week:
 =======================================
 
 * [📕 Why Has Nobody Told Me This Before? - Julie Smith (book) --](https://www.amazon.co.uk/dp/B08YVS7L16/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1) Dr Smith is an experienced clinical psychologist I've seen condensing many aspects of CBT and mindfulness into short-form TikToks. She holds a unique skill of using digestible metaphors to describe the qualia of mental dis-ease. If you’re like me and can’t yet afford therapy, a book like this is fantastic and (combined with **Atomic Habits**) gives an insight into the actionable lessons to regain mental health.
+
+
+https://images.unsplash.com/photo-1456324504439-367cee3b3c32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDR8fHRvJTIwZG8lMjBsaXN0fGVufDB8fHx8MTY0MjY2NjkzMQ&ixlib=rb-1.2.1&q=80&w=2000

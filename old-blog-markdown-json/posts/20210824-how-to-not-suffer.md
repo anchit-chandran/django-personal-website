@@ -83,3 +83,6 @@ Cool things I've come across this week:
 
 * 🔊 [Russell Brand speaking to Ben Shapiro](https://open.spotify.com/episode/24pVqci0zG07SpVpEPfyIz?si=b20ShpHKTuqcT2TiMFYhyA&dl_branch=1) – Shapiro is a dumb dumb but I really rate Russell and I think he sets a really good example of how to productively disagree with people who have completely opposing world views but also share some fundamental ideals.
 * 📽 [Harold & Kumar Escape from Guantanamo Bay](app://obsidian.md/index.html) – ??? good film tho
+
+
+https://images.unsplash.com/photo-1507617458722-9591b6b54cae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDEzfHxoaW5kdWlzbXxlbnwwfHx8fDE2Mjk4MzE3NTc&ixlib=rb-1.2.1&q=80&w=2000

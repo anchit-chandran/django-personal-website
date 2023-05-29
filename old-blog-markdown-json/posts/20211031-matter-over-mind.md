@@ -45,3 +45,6 @@ Cool things I've come across this week:
 
 * [🔊 The Promises and Perils of AI *(podcast, The Tim Ferris Show)* –](https://open.spotify.com/episode/1AsRx4bGLRkLn6OWvGNQ5f?si=M6T50E4vQe2vxbeG-fpxkg) some dons talking about Web3, the future of crypto and NFTs.
 * [📕 On Love by](https://www.academia.edu/7679168/Alain_de_Botton_Essays_in_love) *[Alain de Botton (book)](https://www.academia.edu/7679168/Alain_de_Botton_Essays_in_love)* [–](https://www.academia.edu/7679168/Alain_de_Botton_Essays_in_love) Alain is a British philosopher who captures the complexities of modern-day issues through the lens of philosophy. I particularly liked this essay – he talks about the process of falling in and out of love, and the paradox of loving something imperfect. Reading it was genuinely like seeing my own mind.
+
+
+https://images.unsplash.com/photo-1536478922953-936c5cf65665?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDE2fHxlbmR1cmFuY2V8ZW58MHx8fHwxNjM1NjgyOTQ2&ixlib=rb-1.2.1&q=80&w=2000

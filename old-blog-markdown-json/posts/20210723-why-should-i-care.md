@@ -158,3 +158,6 @@ Cool things I've come across this week:
 * 📹 [New Amsterdam](https://www.amazon.com/New-Amsterdam-Season-3/dp/B08XVWZHDG) - fully one of my favourite TV shows that has some good medicine alongside exploring all the difficult human elements of being a doctor. Season 3 is out (in America)!
 * 🎵 [We’re all alone in this together](https://open.spotify.com/album/6HwzIlrCDq3WF9vMq8meqG?si=SiN2VeoOSAGKwYOMkFo79w&dl_branch=1) - Dave just dropped a new album.
 * 🎵 [Donda](https://g.co/kgs/Yhy2kb) - Kanye just dropped a new album.
+
+
+https://images.unsplash.com/photo-1560306580-9e204fe45f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHNpY2slMjBiYWJ5fGVufDB8fHx8MTYyNzA0MDM0Nw&ixlib=rb-1.2.1&q=80&w=2000

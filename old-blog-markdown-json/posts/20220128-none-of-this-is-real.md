@@ -80,3 +80,6 @@ Cool things I've come across this week:
 * **[🔊 Deep Dive: How productivity ruins your life with productivity expert Oliver Burkeman *(podcast)*](https://open.spotify.com/episode/7yCsfUppC0SMZPiVGnLAeQ?si=b5a4529c70774437) -** what a coincidence -- Ali Abdaal’s two most recent Deep Dive episodes (where he talks to leaders in their field about how they live life) are **1)** about to-do lists and **2)** with the author of the mental health book I recommended last week. In this episode, they talk about accepting you won’t be able to do everything in 24 hours, being happy about that, and finding ways to do just the most important thing.
 * **[🔊 Deep Dive: A Psychologist’s Guide to a Meaningful Life with Dr Julie Smith *(podcast)*](https://open.spotify.com/episode/5zf3QjS60BofCEHHRe2RAs?si=47d9a6e8733249a9)-** Dr Smith talks about stuff from her new book and generally how to make life worth living.
 * **[💻 My Portfolio Website](https://anchit.netlify.app/) -** finished the first draft of my coding portfolio website; coded from scratch and learned a lot about front-end web development!
+
+
+https://images.unsplash.com/photo-1563891217861-7924b471afb3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDl8fG1hdHJpeHxlbnwwfHx8fDE2NDMyMDcxMDk&ixlib=rb-1.2.1&q=80&w=2000

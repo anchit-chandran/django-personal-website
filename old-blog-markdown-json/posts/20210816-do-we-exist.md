@@ -103,3 +103,6 @@ Cool things I've come across this week:
 * [📚 Storyworthy](https://books.google.co.uk/books/about/Storyworthy.html?id=ZoRZDwAAQBAJ&source=kp_book_description&redir_esc=y) - started a new book about how to improve your storytelling and why it matters.
 * [🔊 Do we have specific Personality Types? (Not Overthinking)](https://open.spotify.com/episode/2Hf2HoZFSRDPVYMqGK1dP6?si=oQwTCXhhRfqbYX_2evCO6g&dl_branch=1) - podcast about personality types (which, along with learning styles, I fully do not believe exist, mainly because of the mountains of data suggesting otherwise)
 * [📽 VSauce analysis of Mind Field episodes](https://youtu.be/b0cakXwiZ8s) - VSauce has been one of my favourite content producers since I was a child. Here, he first discusses treating childhood mental illness through placebo and the ethics behind lying to them for their benefit. He also considers whether we **should** die, given we have the ability to indefinitely elongate life through cryogenic storage.
+
+
+https://images.unsplash.com/photo-1602463843491-1becaf199ad8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxiaW5hcnl8ZW58MHx8fHwxNjI5MTE0ODY2&ixlib=rb-1.2.1&q=80&w=2000

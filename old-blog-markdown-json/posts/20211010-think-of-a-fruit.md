@@ -122,3 +122,6 @@ Cool things I've come across this week:
 =======================================
 
 * [🔊 Tim Ferris Show: How to take radical responsibility and reduce drama in your life](https://open.spotify.com/episode/3TsJ9yRlcUEu6N1z0OyTat?si=67588c4debd94b97) *[(podcast)](https://open.spotify.com/episode/3TsJ9yRlcUEu6N1z0OyTat?si=67588c4debd94b97)* – Tim speaks with Diana Chapman about a method to analyse the thoughts and beliefs causing your anxiety. She gives us a tool to deal with unnecessary "*drama"* e.g. she talks Tim through how to escape the anxiety associated with a recurrence of his depression, which in the past, made him come close to taking his own life.
+
+
+https://images.unsplash.com/photo-1616442751986-fe0df84ad730?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fHlvdSUyMGFyZSUyMHlvdXxlbnwwfHx8fDE2MzM4ODQzOTU&ixlib=rb-1.2.1&q=80&w=2000

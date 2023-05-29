@@ -79,3 +79,6 @@ Cool things I've come across this week:
 * [📕 The Alignment Problem *(book)* –](https://brianchristian.org/the-alignment-problem/) hands down, the best book linking AI, psychology, philosophy, and brain development. Explores how we ensure our AI models align with human values.
 * [📺 Atlanta *(TV series) -*](https://www.disneyplus.com/en-gb/series/atlanta/68sl4qXn1PbA?distributionPartner=google) started watching Atlanta by Donald Glover, love it.
 * 📺 [Dave (](https://www.bbc.co.uk/iplayer/episodes/p08b9fpl/dave)*[TV series](https://www.bbc.co.uk/iplayer/episodes/p08b9fpl/dave)*[) -](https://www.bbc.co.uk/iplayer/episodes/p08b9fpl/dave) finished watching Dave, 10/10. Covers mental health, passion, and obsession, and has an excellent soundtrack.
+
+
+https://images.unsplash.com/photo-1551225183-94acb7d595b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDEwfHx3b3Jkc3xlbnwwfHx8fDE2NzUzNTMxMTY&ixlib=rb-4.0.3&q=80&w=2000

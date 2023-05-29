@@ -88,3 +88,6 @@ Cool things I've come across this week:
 
 * 📚 [The Daily Stoic](https://www.goodreads.com/book/show/29093292-the-daily-stoic) - a book by **Ryan Holiday** which has 366 short Stoic meditations to help one live a better life.
 * 🎥 [Never Have I Ever](https://www.netflix.com/browse?jbv=80179190) - Netflix series that completely normalises being brown. Also, it's by the don **Mindy Kaling** (who also wrote the jokes for the US Office!). Season 2 just dropped!
+
+
+\_\_GHOST\_URL\_\_/content/images/2021/07/dog.jpg

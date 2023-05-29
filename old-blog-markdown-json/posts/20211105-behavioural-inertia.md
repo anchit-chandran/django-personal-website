@@ -49,3 +49,6 @@ Cool things I've come across this week:
 =======================================
 
 * Apparently marzipan is made of almonds?! Mind-blown 🤯
+
+
+https://images.unsplash.com/photo-1633493702341-4d04841df53b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDh8fG5ld3RvbnxlbnwwfHx8fDE2MzYxMDY4NjA&ixlib=rb-1.2.1&q=80&w=2000

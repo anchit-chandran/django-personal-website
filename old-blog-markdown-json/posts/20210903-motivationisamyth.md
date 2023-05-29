@@ -99,3 +99,6 @@ Cool things I've come across this week:
 =======================================
 
 * **📕** [**How The World Thinks**](https://www.amazon.co.uk/s?k=the+way+the+world+thinks&adgrpid=105310542216&gclid=CjwKCAjwj8eJBhA5EiwAg3z0m2SdAFsiZfwB0hi2k5g4iy7Q1s3eWW6UnG7plFBTw7P4ovjRnBjnfhoCG3sQAvD_BwE&hvadid=450724550567&hvdev=c&hvlocint=9046523&hvlocphy=9072501&hvnetw=g&hvqmt=e&hvrand=5851479801795185082&hvtargid=kwd-969742516270&hydadcr=9344_1820547&tag=googhydr-21&ref=pd_sl_5c2rlls2d3_e_p49) **by Julian Baggini** – a phenomenal book exploring all the different philosophies around the globe. The cultures of every society are explained through their foundational beliefs and values. Understanding these helps you understand why people on the other side of the world lead seemingly different lives.
+
+
+https://images.unsplash.com/photo-1552508744-1696d4464960?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDl8fG1vdGl2YXRpb258ZW58MHx8fHwxNjMwNjc0OTUz&ixlib=rb-1.2.1&q=80&w=2000

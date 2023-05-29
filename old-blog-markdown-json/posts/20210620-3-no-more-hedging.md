@@ -100,3 +100,6 @@ Cool things I've come across this week:
 * 📱 [**@jack.lowro**](https://www.tiktok.com/@jack.lawro?) **(TikTok)** - a don who clearly conveys philosophy of science concepts.
 * 📹 **[Psychiatrist reacts to: "I have too much self-awareness"](https://www.youtube.com/watch?v=So7hE1Ba_QA)** - **YouTube** video where a Psychiatrists talks about the link between our Default Mode Network, depression & anxiety, and a potential explanation of the therapeutic effects of dissociatives & psychedelics. For some reason, this is a gaming streaming channel idk.
 * 📰 [**Paper**](https://informatics.bmj.com/content/28/1/e100187) showing how awful the NHS 111 COVID-19 triage system is (along with the US' CDC triage system). The system is broken beyond repair - change is required from the ground up.
+
+
+https://images.unsplash.com/photo-1551014758-8a7903f5b855?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDR8fGhlZGdlfGVufDB8fHx8MTYyMzg1NTk2MQ&ixlib=rb-1.2.1&q=80&w=2000

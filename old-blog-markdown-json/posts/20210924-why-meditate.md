@@ -159,3 +159,6 @@ Cool things I've come across this week:
 * **🔊 [Psychiatrist speaks about pain and addiction](https://open.spotify.com/episode/5Be4tuggcybyb0T28zuEoy?si=e3cb7d656be44fd3)** *(podcast)* – Psychiatrist Dr Lembke speaks about how our pain and pleasure centres are co-located in our brains, leading to their linking. She also suggests that those people who form an addiction (usually due to emotional-focussed coping) because of the loss of pleasure in their life (i.e. anhedonia) could utilise *painful* activities to balance out their pain-pleasure centre e.g. doing something difficult & outside one’s comfort zone physically and/or mentally (like martial arts).
 * 📺 **[Dear White People](https://www.netflix.com/watch/80095698?source=35)** *(Netflix TV-series) –* new season!
 * **🎁 [Powerbeats Pro Wireless Earphones](https://www.amazon.co.uk/gp/product/B088KTG9SM/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)** *(product)*– my Beats X broke so got some new earphones and these are perfect for exercising/ generally on the go and synergise well with Apple products. Way better than Airpods.
+
+
+https://images.unsplash.com/photo-1605378229010-11aedbb01b24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDV8fGhpbmR1fGVufDB8fHx8MTYzMjE2NzgyNA&ixlib=rb-1.2.1&q=80&w=2000

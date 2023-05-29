@@ -67,3 +67,6 @@ Cool things I've come across this week:
 **Videos**
 
 * [***Math Has a Fatal Flaw***](https://www.youtube.com/watch?t=15s&utm_campaign=Anchit&utm_medium=email&utm_source=Revue%20newsletter&v=HeQX2HjkcNo) - super trippy video that made me question if maths is real
+
+
+https://images.unsplash.com/photo-1545955413-209e03defb1f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDExfHxzdW58ZW58MHx8fHwxNjIzODU1MzIw&ixlib=rb-1.2.1&q=80&w=2000

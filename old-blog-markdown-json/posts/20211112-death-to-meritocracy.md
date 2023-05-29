@@ -74,3 +74,6 @@ Cool things I've come across this week:
 
 * [**🔊 How to optimise your brain health (Deep Dive)**](https://open.spotify.com/episode/4l2DK2bNRLa0BqIJXb28Tg?si=e50386d720cc4ff9) – my lord and saviour, Ali Abdaal, speaks with another of my heroes – Dan Murrary-Serter – about improving one’s own brain health. Also, Dan explains his understanding of spirituality to Ali, who doesn’t really know anything about it. Dan is the CEO of **Brain Care** who sell daily vitamins which are actually scientifically-backed. I’ve been taking them for 1.5 months, and I’d recommend them to everyone!
 * **[📽 Narcos: Mexico Season 3 (Netflix)](https://www.netflix.com/title/80997085)** – New season of Narcos: Mexico released.
+
+
+https://images.unsplash.com/photo-1611590467286-6d87b2908ebe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDZ8fGhhbW1lciUyMHNpY2tsZXxlbnwwfHx8fDE2MzY0NTEzNDg&ixlib=rb-1.2.1&q=80&w=2000

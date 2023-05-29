@@ -27,7 +27,7 @@ def projects(request):
 
 
 def blog(request):
-    posts = BlogPost.objects.all()
+    posts = BlogPost.objects.all().order_by('-posted_at')
     return render(request, "app_website/blog.html", {'posts':posts})
 
 

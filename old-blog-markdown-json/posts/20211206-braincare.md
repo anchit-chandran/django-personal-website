@@ -97,3 +97,6 @@ Cool things I've come across this week:
 * **[🔊 Nish Kumar on *Hip Hop Saved my Life with Romesh Ranganathan (podcast)* –](https://open.spotify.com/episode/2TOjpoh6HG1f5B1ZuUxGEQ?si=GyxwV4glTwaxzrl1za_c1A)** Two brown kings speaking about life, interspersed with some classic hip-hop. Though I’ve always found Nish funny, he’s very SJW with his humour. Didn’t realise he got so much hate for it.
 * **[🔊 Finding balance in a dopamine overloaded world with Dr Anna Lembke *(podcast)* –](https://open.spotify.com/episode/1wFTluZ2odM2IQ8PBEkiBA?si=6aa6287d22bc4fb2)** the host of this podcast, Dr Rangan Chatterjee, is who I want to be in my life in terms of medicine. This episode talks about how addiction (to anything, including caffeine) leads to depression and how to overcome it.
 * **[📲 Cointracker.io *(app/website)* –](https://www.cointracker.io/)** lets you connect all your various crypto wallets to visualise in one dashboard. For example, as of 04/12/21 09:09 GMT, I am in a 6.57% loss 😎
+
+
+https://images.unsplash.com/photo-1559757148-5c350d0d3c56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDF8fGJyYWluJTIwY2FyZXxlbnwwfHx8fDE2Mzg4MTg0ODU&ixlib=rb-1.2.1&q=80&w=2000

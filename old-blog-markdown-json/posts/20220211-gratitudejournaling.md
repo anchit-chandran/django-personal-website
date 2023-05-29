@@ -65,3 +65,6 @@ Cool things I've come across this week:
 =======================================
 
 * [**📽 The Joker *(film)* –**](https://www.amazon.co.uk/Joker-Joaquin-Phoenix/dp/B07YP8JS6J)​ a cool exploration of Nietzschean philosophy but imo Fight Club did it much better.
+
+
+https://images.unsplash.com/photo-1483546363825-7ebf25fb7513?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDN8fGpvdXJuYWx8ZW58MHx8fHwxNjQ0MjUwNzgz&ixlib=rb-1.2.1&q=80&w=2000

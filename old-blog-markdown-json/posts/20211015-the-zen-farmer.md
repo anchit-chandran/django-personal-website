@@ -71,3 +71,6 @@ Cool things I've come across this week:
 
 * [**🔊 Medical Cannabis 101 *(Big Picture Medicine, Podcast)*** –](https://open.spotify.com/episode/46TNRe2xshHdRG6PkKcEL4?si=702c63be5e4c4965) the GOAT that is Dr Sultan speaks with Dr Viaris de Lesegno, CMO of Cellen, this week about medical cannabis and its under-appreciated benefits. They also discuss advice for other *doctorpreneurs*.
 * **💻** [**History of Psychedelic Drugs Policy by Professor David Nutt**](https://www.youtube.com/watch?v=tknVVVGeDj0&t=3362s) *[**(Psychedelic Studies Imperial, Youtube)**](https://www.youtube.com/watch?v=tknVVVGeDj0&t=3362s)* – I recently discovered there’s a Psychedelic Studies society at Imperial and they are doing a series of talks exploring the current landscape of psychedelics. In this talk, the fantastic Professor Nutt gives an insight into the history of why Psychedelics got such a bad name, even though almost every single society grew using them. Learning about the influence of the government, pro-war propaganda, and counter-factual “science” seriously pissed me off. Definitely recommend watching!
+
+
+https://images.unsplash.com/photo-1620901433789-1d2f85a93653?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDE1fHxmYXJtZXJ8ZW58MHx8fHwxNjM0MzA2MzA4&ixlib=rb-1.2.1&q=80&w=2000

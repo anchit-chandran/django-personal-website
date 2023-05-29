@@ -93,3 +93,5 @@ Cool things I've come across this week:
 
 ![Buddhism is Kinda Out There, Man](https://s3.amazonaws.com/revue/items/images/009/599/766/mail/maxresdefault.jpg?1623146599 "Buddhism is Kinda Out There, Man")Buddhism is Kinda Out There, Man
 
+
+https://images.unsplash.com/photo-1580711508375-6040b32f28aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDEwfHxmaWdodHxlbnwwfHx8fDE2MjM4NTc2MDY&ixlib=rb-1.2.1&q=80&w=2000

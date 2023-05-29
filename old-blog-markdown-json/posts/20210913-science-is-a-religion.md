@@ -99,3 +99,6 @@ Cool things I've come across this week:
 
 * **💻** [**The Universe is Hostile to Computers (Veritasium)**](https://www.youtube.com/watch?v=AaZ_RSt0KP8) – quite a worrying but mind-blowing YouTube video.
 * **🔊** [**The Bias Diagnosis (Ivan Beckley)**](https://www.audible.co.uk/pd/The-Bias-Diagnosis-Podcast/B08W4YZT2S#:~:text=Five%20patients%2C%20one%20treatment%20room%2C%20and%20a%20broken%20healthcare%20system.&text=But%20he's%20not%20convinced%20that,insidious%20injustices%20in%20modern%20medicine.) – a five-part podcast created by a final year UCL medical student exploring the hidden biases in medicine that fail patients. It includes personal accounts and it’s quite eye-opening.
+
+
+https://images.unsplash.com/photo-1585059466160-5cd3af4c49d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDJ8fHNjaWVuY2UlMjByZWxpZ2lvbnxlbnwwfHx8fDE2MzE1MjA3NDY&ixlib=rb-1.2.1&q=80&w=2000

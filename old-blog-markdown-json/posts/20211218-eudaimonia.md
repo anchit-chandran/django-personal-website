@@ -124,3 +124,6 @@ Cool things I've come across this week:
 * Nose breathing is very good for health, mouth breathing is seriously dangerous
 * Mouth tape when sleeping (I've been doing this for about a year and recommend it a lot)
 * Breathwork – I’ve always been a sceptic but the dude on Rangan’s show is also a sceptic who’s explored all the different methods and found empirical benefit. Made me try this ([20 minute guided Wim Hoff methods](https://www.youtube.com/watch?v=tybOi4hjZFQ)) and I can see the benefit!
+
+
+https://images.unsplash.com/photo-1569759276108-31b8e7e43e7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDN8fHJvbWFufGVufDB8fHx8MTYzOTgxOTIyNA&ixlib=rb-1.2.1&q=80&w=2000
