@@ -12,13 +12,13 @@ class Category(models.Model):
 
 class BlogPost(models.Model):
 
-    posted_at = models.DateTimeField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    posted_at = models.DateTimeField(null=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     category = models.ManyToManyField(Category)
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, null=True)
     header_img = models.URLField(max_length=500, default=None, null=True)
-    content = models.TextField(max_length=5000)
-    featured = models.BooleanField()
+    content = models.TextField(max_length=5000, null=True)
+    featured = models.BooleanField(null=True)
     
     def __str__(self):
         featured = "*" if self.featured else ""
