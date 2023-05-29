@@ -17,7 +17,7 @@ class BlogPost(models.Model):
     category = models.ManyToManyField(Category)
     title = models.CharField(max_length=100, null=True)
     header_img = models.URLField(max_length=500, default=None, null=True)
-    content = models.TextField(max_length=5000, null=True)
+    content = models.TextField(max_length=10000, null=True)
     featured = models.BooleanField(null=True)
     
     def __str__(self):
