@@ -138,9 +138,22 @@ nav a.nav-link {
   }
 }
 
+h4.index-sub-title {
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
 /* // FEATURED ARTICLES */
 section.featured-articles > .title-col {
   border-bottom: 1px solid var(--brand);
+}
+
+section.featured-articles .card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0;
 }
 
 /* // RECENT PROJECTS */
@@ -151,6 +164,7 @@ section.recent-projects > .title-col {
 .project-card .card-text {
   font-size: small;
 }
+
 
 /* // CARDS */
 .card {

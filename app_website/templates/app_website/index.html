@@ -19,7 +19,7 @@
 </section>
 <section class="row featured-articles">
     <div class="col-12 pb-2 px-0 d-flex justify-content-between align-items-end title-col">
-        <h4 class="mb-0">Featured Articles</h4>
+        <h4 class="mb-0 index-sub-title">Featured Articles</h4>
         <a href="{% url 'blog' %}" class="btn btn-outline-primary btn-sm">See all <i class="bi bi-arrow-right"></i></a>
     </div>
     <div class="col px-0">
@@ -27,7 +27,7 @@
             {% for post in posts %}
             <div class="col-4">
                 <div class="card">
-                    <img src="https://placehold.co/600x400" alt="" class="card-img-top">
+                    <img src="https://placehold.co/600x400" alt="" class="">
                     <div class="card-body px-0">
                         <p class="card-title">{{ post.title }}</p>
                         <p class="card-text"><small class="text-body-secondary muted">{{ post.posted_at|date:"j M Y"}}</small></p>
@@ -42,7 +42,7 @@
 
 <section class="row recent-projects">
     <div class="col-12 pb-2 px-0 d-flex justify-content-between align-items-end title-col">
-        <h4 class="mb-0">Recent Projects</h4>
+        <h4 class="mb-0 index-sub-title">Recent Projects</h4>
     </div>
     <div class="col px-0">
         <div class="row py-3">
