@@ -4,6 +4,7 @@ from datetime import datetime, time
 from django.core.management.base import BaseCommand
 from django.conf import settings
 from django.utils.timezone import make_aware
+from django.contrib.auth.models import User
 
 from app_website.models import BlogPost
 
@@ -18,6 +19,8 @@ class Command(BaseCommand):
         if options["mode"] == "seed_posts":
             self.stdout.write("Seeding blog posts...")
             run_blog_post_seed()
+        elif options["mode"] == "seed_superuser":
+            seed_superuser()
 
 
 def run_blog_post_seed():
@@ -67,3 +70,19 @@ def run_blog_post_seed():
                     )
                     print(f"Saving {post}")
                     post.save()
+
+def seed_superuser():
+    username = 'a'
+    email = 'a@a.com'
+    password = 'pw'
+    
+    if not User.objects.filter(username=username).exists():
+        print(f"Creating superuser...")
+        superuser = User.objects.create_superuser(
+            username=username,
+            email=email,
+            password=password,
+        )
+        superuser.save()
+    
+    print(f"Superuser username: {username}\nSuperuser password: {password}")
