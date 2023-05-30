@@ -110,6 +110,40 @@ nav a.nav-link {
   ) !important;
 }
 
+/* UTILITIES */
+
+.placeholder-box {
+  background-color: var(--accent);
+  position: relative;
+  z-index: 10;
+}
+
+.placeholder-box::before {
+  padding-bottom: 75%;
+  content: "";
+  display: block;
+}
+
+.object-fit {
+  height: 100%;
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.span-link {
+  bottom: 0;
+  left: 0;
+  outline: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 50;
+}
+
 @media (min-width: 768px) {
   .container {
     max-width: 860px;

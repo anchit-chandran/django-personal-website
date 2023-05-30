@@ -27,11 +27,15 @@
             {% for post in posts %}
             <div class="col-4">
                 <div class="card">
-                    <img src="{% if post.header_img %}{{ post.header_img }}{% else %} {{DEFAULT_HEADER_IMG_URL}} {% endif %}" alt="" class="">
+                    <a href="{% url 'view_post' post.id %}" class="span-link">
+                    </a>
+                    <div class="featured-article-header-img-wrapper placeholder-box">
+                        <img src="{% if post.header_img %}{{ post.header_img }}{% else %} {{DEFAULT_HEADER_IMG_URL}} {% endif %}"
+                            alt="" class="featured-article-img object-fit">
+                    </div>
                     <div class="card-body px-0">
-                        <a href="{% url 'view_post' post.id %}" class="span-link">
-                            <p class="card-title">{{ post.title }}</p>
-                        </a>
+
+                        <p class="card-title">{{ post.title }}</p>
                         <p class="card-text"><small class="text-body-secondary muted">{{ post.posted_at|date:"j M Y"}}</small></p>
                     </div>
                 </div>
@@ -62,7 +66,7 @@
                             obcaecati necessitatibus ut molestias sint hic inventore. Deserunt.</p>
                         <div class="row">
                             <div class="col d-flex justify-content-start pills">
-                                
+
                                 <div class="p-2 badge pill">tag</div>
 
                             </div>
