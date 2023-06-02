@@ -1,5 +1,7 @@
 {% extends 'app_website/base.html' %}
 
+{% load markdown_extras %}
+
 {% block content %}
 <section class="row masthead justify-content-center align-items-center">
     <div class="col text-center">
@@ -52,29 +54,28 @@
     </div>
     <div class="col px-0">
         <div class="row py-3">
-
+            {% for project in projects %}
             <div class="col-6">
                 <div class="row">
                     <div class="col-4">
                         <img src="https://placehold.co/600x400" alt="" class="img img-fluid">
                     </div>
                     <div class="col project-card card">
-                        <p class="card-title"> post.title </p>
-                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-                            blanditiis sed beatae labore atque officiis amet dolore enim rerum minima! Deserunt
-                            quidem
-                            obcaecati necessitatibus ut molestias sint hic inventore. Deserunt.</p>
+                        <p class="card-title"> {{ project.title }} </p>
+                        <p class="card-text">{{ project.content | safe }}</p>
                         <div class="row">
-                            <div class="col d-flex justify-content-start pills">
-
-                                <div class="p-2 badge pill">tag</div>
-
+                            <div class="col d-flex pills">
+                                {% for skill in project.skills.all %}
+                                <div class="col">
+                                    <div class="p-2 badge pill">{{ skill }}</div>
+                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            {% endfor %}
         </div>
     </div>
 </section>

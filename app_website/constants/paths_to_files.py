@@ -1,0 +1,1 @@
+PROJECTS_FOLDER_PATH = r'/app/app_website/projects'

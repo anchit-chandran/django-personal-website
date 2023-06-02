@@ -5,8 +5,15 @@ from django.core.management.base import BaseCommand
 from django.conf import settings
 from django.utils.timezone import make_aware
 from django.contrib.auth.models import User
+import frontmatter
+import markdown as md
 
-from app_website.models import BlogPost
+from app_website.models import (
+    BlogPost,
+    Project,
+    Category,
+    Skill,
+    )
 
 
 class Command(BaseCommand):
@@ -21,7 +28,53 @@ class Command(BaseCommand):
             run_blog_post_seed()
         elif options["mode"] == "seed_superuser":
             seed_superuser()
+        elif options["mode"] == "seed_projects":
+            self.stdout.write("Seeding blog posts...")
+            run_projects_seed()
 
+def run_projects_seed():
+    # Specify the directory path
+    directory = f"{settings.BASE_DIR}/app_website/projects"
+    
+    # Iterate through all files in the directory
+    for filename in os.listdir(directory):
+        filepath = os.path.join(directory, filename)
+
+        # Check if the current item is a file
+        if os.path.isfile(filepath):
+            # Open the file for reading
+            with open(filepath, "r", encoding='UTF-8') as file:
+                content = file.read()
+                metadata, markdown_content = frontmatter.parse(content)
+                
+                # don't repeat seeding if project already exists
+                if Project.objects.filter(title=metadata['title']):
+                    print(f"{metadata['title']} already exists. Skipping...")
+                    continue
+                
+                print('Seeding ', metadata['title'])
+                
+                project = Project(
+                    title = metadata['title'],
+                    content = markdown_content,
+                    github = metadata['github'],
+                    featured = metadata['featured']
+                )
+
+                # project needs to be saved before adding skill
+                project.save()
+                
+                # TODO NOT SEEDING SKILLS PROPERLY
+                # clean up and add skills
+                for skill in metadata['skills']:
+                    # if skill doesn't exist, add
+                    if not Skill.objects.filter(name=skill).exists():
+                        print(f"Skill {skill} doesn't exist - adding")
+                        project.skills.create(name=skill)
+                    else:
+                        print(f"{skill} already present. Skipping...")
+                
+                
 
 def run_blog_post_seed():
     # Specify the directory path
@@ -34,7 +87,7 @@ def run_blog_post_seed():
         # Check if the current item is a file
         if os.path.isfile(filepath):
             # Open the file for reading
-            with open(filepath, "r") as file:
+            with open(filepath, "r", encoding='UTF-8') as file:
                 # Read the contents of the file
 
                 contents = file.readlines()
