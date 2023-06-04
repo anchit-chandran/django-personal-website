@@ -25,7 +25,7 @@
                     </a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link {% if request.path == projects_url %}active {% endif %}"" aria-current="page" href="{% url 'projects' %}">
+                    <a class="nav-link {% if 'project' in request.path %}active {% endif %}"" aria-current="page" href="{% url 'projects' %}">
                         Projects
                     </a>
                 </li>
