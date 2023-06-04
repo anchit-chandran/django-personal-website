@@ -3,6 +3,7 @@ title: Trip Track
 featured: True
 github: https://github.com/anchit-chandran/best-trip
 skills: ["Python", "HTML", "CSS", "Bootstrap5", "Django", "Github"]
+header_img: https://github.com/anchit-chandran/best-trip/raw/live/early-promo.gif
 ---
 
 A Django application for tracking and journaling your psychedelic adventures.

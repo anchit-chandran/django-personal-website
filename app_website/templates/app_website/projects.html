@@ -1,7 +1,42 @@
 {% extends 'app_website/base.html' %}
 
 {% block content %}
-<div class="page-title-wrapper">
-    <h1 class="text-center">My Work</h1>
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <div class="page-title-wrapper">
+                    <h1 class="text-center">My Work</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% for project in projects %}
+                <div class="row py-3 my-5">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="{{ project.header_img }}" alt="" class="img img-fluid">
+                            </div>
+                            <div class="col project-card card">
+                                <div class="project-title-wrapper d-flex justify-content-between">
+                                    <p class="card-title"> {{ project.title }} </p>
+                                    <a href="{% url 'view_project' project.id %}" class="btn btn-outline-primary btn-sm">Read more <i class="bi bi-arrow-right"></i></a>
+                                </div>
+                                <p class="card-text">{{ project.content | safe }}</p>
+                                <div class="pills">
+                                    {% for skill in project.skills.all %}
+                                    <div class="p-2 badge pill">{{ skill }}</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

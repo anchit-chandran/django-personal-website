@@ -19,7 +19,7 @@
         </div>
     </div>
 </section>
-<section class="row featured-articles justify-content-center mt-5 mt-md-0">
+<section class="row index featured-articles justify-content-center mt-5 mt-md-0">
     <div class="col-11 col-md-12 pb-2 px-0 d-flex justify-content-between align-items-end title-col">
         <h4 class="mb-0 index-sub-title">Featured Articles</h4>
         <a href="{% url 'blog' %}" class="btn btn-outline-primary btn-sm">See all <i class="bi bi-arrow-right"></i></a>
@@ -48,7 +48,7 @@
 </section>
 
 
-<section class="row recent-projects">
+<section class="row index recent-projects">
     <div class="col-12 pb-2 px-0 d-flex justify-content-between align-items-end title-col">
         <h4 class="mb-0 index-sub-title">Recent Projects</h4>
     </div>
@@ -58,19 +58,17 @@
             <div class="col-6">
                 <div class="row">
                     <div class="col-4">
-                        <img src="https://placehold.co/600x400" alt="" class="img img-fluid">
+                        <img src="{{ project.header_img }}" alt="" class="img img-fluid">
                     </div>
                     <div class="col project-card card">
+                        <a href="{% url 'view_project' project.id %}" class="span-link">
+                        </a>
                         <p class="card-title"> {{ project.title }} </p>
                         <p class="card-text">{{ project.content | safe }}</p>
-                        <div class="row">
-                            <div class="col d-flex pills">
-                                {% for skill in project.skills.all %}
-
+                        <div class="pills">
+                            {% for skill in project.skills.all %}
                                 <div class="p-2 badge pill">{{ skill }}</div>
-
-                                {% endfor %}
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

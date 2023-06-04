@@ -63,13 +63,32 @@ def view_post(request, post_id):
         request, "app_website/post.html", {"post": post, "reading_time": reading_time}
     )
 
+def view_project(request, project_id):
+    
+    project = Project.objects.get(id=project_id)
+    
+    return render(
+        request, "app_website/project.html", {"project": project}
+    )
 
 def about(request):
     return render(request, "app_website/about.html")
 
 
 def projects(request):
-    return render(request, "app_website/projects.html")
+    
+    projects = Project.objects.all()
+    
+    # get just the first para from the md content
+    for project in projects:
+        md_html = md.markdown(project.content)
+        p_close_tag_index = md_html.find('</p>')+4
+        projects_first_p = md_html[:p_close_tag_index]
+        
+        # assign to python project object .content attribute
+        project.content = projects_first_p
+    
+    return render(request, "app_website/projects.html", {"projects":projects})
 
 
 def blog(request):

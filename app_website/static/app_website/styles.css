@@ -184,16 +184,17 @@ h4.index-sub-title {
   font-weight: 700;
 }
 
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
 /* // FEATURED ARTICLES */
 section.featured-articles > .title-col {
   border-bottom: 1px solid var(--brand);
 }
 
-section.featured-articles .card-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0;
-}
 
 /* // RECENT PROJECTS */
 section.recent-projects > .title-col {
@@ -212,13 +213,16 @@ section.recent-projects > .title-col {
 }
 
 /* // PILLS */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .badge.pill {
   color: var(--pill-text-color);
   background-color: var(--pill-bg-color);
-}
-
-.badge.pill:not(:first-child) {
-  margin-left: 1em;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* POSTS */
@@ -286,11 +290,19 @@ section.recent-projects > .title-col {
   font-size: 3rem;
   font-weight: 800;
 }
+.github-link>a {
+  color: var(--white);
+  font-size: 2rem;
+  transition: font-size 0.5s;
+}
+.github-link>a:hover {
+  color: var(--brand);
+  font-size: 2.5rem;
+}
 
 /* TABLES */
 .table.table-dark {
   --bs-table-bg: none;
-  
 }
 
 .table.table-dark:hover {

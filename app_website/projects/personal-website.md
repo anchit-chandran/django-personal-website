@@ -3,6 +3,7 @@ title: My Personal Website
 featured: True
 github: https://github.com/anchit-chandran/django-personal-website
 skills: ["Python", "HTML", "CSS", "Bootstrap5", "Django", "CI/CD with Github", "DevOps", "Docker"]
+header_img: https://user-images.githubusercontent.com/68898006/243195720-29267100-1ebf-49d7-b1b8-e7c55bb8dd42.png
 ---
 
 This website was made using Django and styled using Bootstrap5.

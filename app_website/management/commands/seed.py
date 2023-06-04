@@ -58,21 +58,26 @@ def run_projects_seed():
                     title = metadata['title'],
                     content = markdown_content,
                     github = metadata['github'],
-                    featured = metadata['featured']
+                    featured = metadata['featured'],
+                    header_img = metadata['header_img'],
                 )
 
                 # project needs to be saved before adding skill
                 project.save()
                 
-                # TODO NOT SEEDING SKILLS PROPERLY
                 # clean up and add skills
                 for skill in metadata['skills']:
                     # if skill doesn't exist, add
                     if not Skill.objects.filter(name=skill).exists():
                         print(f"Skill {skill} doesn't exist - adding")
-                        project.skills.create(name=skill)
                     else:
                         print(f"{skill} already present. Skipping...")
+                    
+                    print(f'Associating {skill} with {project.title}')
+                    new_skill = Skill.objects.get(name=skill)
+                    project.skills.add(new_skill)
+            
+                
                 
                 
 
