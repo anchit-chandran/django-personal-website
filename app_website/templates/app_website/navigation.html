@@ -41,8 +41,13 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item me-3">
-                    <a class="nav-link" aria-current="page" href="{% url 'admin:index' %}">
+                    <a class="nav-link" aria-current="page" href="{% url 'admin_user_view' %}">
                         Admin
+                    </a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" aria-current="page" href="{% url 'logout_user' %}">
+                        Logout
                     </a>
                 </li>
                 {% endif %}

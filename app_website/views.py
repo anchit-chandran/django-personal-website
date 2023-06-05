@@ -1,11 +1,10 @@
 # Std Lib imports
 
 # 3rd Party imports
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.conf import settings
-import frontmatter
+from django.shortcuts import render, redirect
 import markdown as md
+from app_website.forms import LoginForm
+from django.contrib.auth import authenticate, login, logout
 
 # Personal imports
 from .models import (
@@ -98,3 +97,29 @@ def blog(request):
 
 def contact(request):
     return render(request, "app_website/contact.html")
+
+def login_user(request):
+    
+    if request.method == "POST":
+    
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+            return redirect("index")
+
+    form = LoginForm()
+    
+    return render(request, "app_website/login.html", {"form":form})
+
+def logout_user(request):
+    
+    logout(request)
+    
+    return redirect("index")
+
+def admin_user_view(request):
+    
+    return render(request, "app_website/admin_user_view.html")

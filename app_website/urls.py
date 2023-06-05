@@ -10,4 +10,7 @@ urlpatterns = [
     path("blog", views.blog, name="blog"),
     path("blog/post/<int:post_id>", views.view_post, name='view_post'),
     path("contact", views.contact, name="contact"),
+    path("login", views.login_user, name="login_user"),
+    path("logout", views.logout_user, name="logout_user"),
+    path("admin_user", views.admin_user_view, name="admin_user_view"),
 ]
