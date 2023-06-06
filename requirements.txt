@@ -5,3 +5,4 @@ typing-extensions==4.6.2
 requests
 markdown
 python-frontmatter
+psycopg2-binary

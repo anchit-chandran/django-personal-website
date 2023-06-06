@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# scripts may need to be made executable on some platforms before they can be run
-# chmod +x <filename> is the command to do this on unixy systems
-
-# starts server
-docker-compose up
-

@@ -70,6 +70,7 @@ def run_projects_seed():
                     # if skill doesn't exist, add
                     if not Skill.objects.filter(name=skill).exists():
                         print(f"Skill {skill} doesn't exist - adding")
+                        Skill.objects.create(name=skill)
                     else:
                         print(f"{skill} already present. Skipping...")
                     

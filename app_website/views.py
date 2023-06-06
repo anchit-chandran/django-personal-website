@@ -48,7 +48,6 @@ def index(request):
         {
             "posts": featured_blog_posts,
             "projects" : featured_projects,
-            "projects_first_p" : projects_first_p,
             "DEFAULT_HEADER_IMG_URL": DEFAULT_HEADER_IMG_URL.DEFAULT_HEADER_IMG_URL,
         },
     )

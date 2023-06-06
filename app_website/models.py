@@ -12,7 +12,7 @@ class Category(models.Model):
 
 class BlogPost(models.Model):
 
-    posted_at = models.DateTimeField(blank=True, auto_now_add=True, null=True)
+    posted_at = models.DateTimeField(blank=True, null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     category = models.ManyToManyField(Category, blank=True, default='Newsletter')
     title = models.CharField(max_length=100, blank=True, null=True)
