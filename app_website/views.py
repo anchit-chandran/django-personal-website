@@ -3,8 +3,8 @@
 # 3rd Party imports
 from django.shortcuts import render, redirect
 import markdown as md
-from app_website.forms import LoginForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Personal imports
 from .models import (
@@ -17,6 +17,7 @@ from .general_functions import (
 from .constants import (
     DEFAULT_HEADER_IMG_URL,
 )
+from .forms import LoginForm, CreatePostForm
 
 
 # Create your views here.
@@ -113,12 +114,28 @@ def login_user(request):
     
     return render(request, "app_website/login.html", {"form":form})
 
+@login_required
 def logout_user(request):
     
     logout(request)
     
     return redirect("index")
 
+@login_required
 def admin_user_view(request):
     
     return render(request, "app_website/admin_user_view.html")
+
+def create_post(request):
+    
+    if request.method == "POST":
+        
+        form = CreatePostForm(request.POST)
+        
+        if form.is_valid():
+            form.save()
+            return redirect("blog")        
+    
+    form = CreatePostForm()
+    
+    return render(request, "app_website/create_post.html", {"form":form})
