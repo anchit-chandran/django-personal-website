@@ -234,6 +234,10 @@ section.recent-projects > .title-col {
   text-transform: uppercase;
 }
 
+.unpublished {
+  color: var(--brand);
+}
+
 .markdown-section .post-title-wrapper {
   line-height: 1.2;
 }
@@ -276,7 +280,6 @@ section.recent-projects > .title-col {
   max-width: 100%;
   height: auto;
 }
-
 
 /* PAGES */
 

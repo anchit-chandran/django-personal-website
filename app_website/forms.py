@@ -16,7 +16,7 @@ class LoginForm(ModelForm):
         }
 
 
-class CreatePostForm(ModelForm):
+class CreateDraftPostForm(ModelForm):
     class Meta:
         model = BlogPost
         fields = "__all__"

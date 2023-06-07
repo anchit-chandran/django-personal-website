@@ -11,7 +11,6 @@ import markdown as md
 from app_website.models import (
     BlogPost,
     Project,
-    Category,
     Skill,
     )
 
@@ -26,6 +25,9 @@ class Command(BaseCommand):
         if options["mode"] == "seed_posts":
             self.stdout.write("Seeding blog posts...")
             run_blog_post_seed()
+        if options["mode"] == "reset_seed_posts":
+            self.stdout.write("Resetting and seeding blog posts...")
+            delete_and_run_blog_post_seed()
         elif options["mode"] == "seed_superuser":
             seed_superuser()
         elif options["mode"] == "seed_projects":
@@ -126,9 +128,16 @@ def run_blog_post_seed():
                         title=title,
                         content=contents,
                         header_img=header_img_url,
+                        published=True,
                     )
                     print(f"Saving {post}")
                     post.save()
+
+def delete_and_run_blog_post_seed():
+    
+    BlogPost.objects.all().delete()
+    
+    run_blog_post_seed()
 
 def seed_superuser():
     username = 'a'

@@ -7,13 +7,28 @@
 <div class="row markdown-section justify-content-center">
     <div class="col">
         <div class="post-title-wrapper py-4 mt-5">
+            {% if not post.published %}
+            <div class="draft-actions-wrapper d-flex justify-content-between">
+                <a href="{% url 'view_draft_posts' %}" class="read_btn btn btn-outline-primary btn-sm">
+                    <i class="read_arrow bi bi-arrow-left"></i>
+                    Drafts
+                </a>
+                <a href="{% url 'view_draft_posts' %}" class="read_btn btn btn-outline-primary btn-sm">
+                    Publish
+                    <i class="read_arrow bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <p class="text-center unpublished">UNPUBLISHED</p>
+
+            {% endif %}
+
             <p class="text-center meta"><small>{{ post.posted_at|date:"j M Y"}} • {{ reading_time }} mins</small></p>
             <h1 class="text-center">{{ post.title }}</h1>
         </div>
 
-            <div class="placeholder-box">
-                <img src="{{ post.header_img }}" alt="" class="object-fit">
-            </div>
+        <div class="placeholder-box">
+            <img src="{{ post.header_img }}" alt="" class="object-fit">
+        </div>
 
         <div class="row justify-content-center">
             <div class="col-10 post-content">

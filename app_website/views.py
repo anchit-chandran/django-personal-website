@@ -17,7 +17,7 @@ from .general_functions import (
 from .constants import (
     DEFAULT_HEADER_IMG_URL,
 )
-from .forms import LoginForm, CreatePostForm
+from .forms import LoginForm, CreateDraftPostForm
 
 
 # Create your views here.
@@ -126,16 +126,22 @@ def admin_user_view(request):
     
     return render(request, "app_website/admin_user_view.html")
 
-def create_post(request):
+def create_draft_post(request):
     
     if request.method == "POST":
         
-        form = CreatePostForm(request.POST)
+        form = CreateDraftPostForm(request.POST, initial={"published":False})
         
         if form.is_valid():
             form.save()
-            return redirect("blog")        
+            return redirect("view_draft_posts")        
     
-    form = CreatePostForm()
+    form = CreateDraftPostForm()
     
     return render(request, "app_website/create_post.html", {"form":form})
+
+def view_draft_posts(request):
+    
+    draft_posts = BlogPost.objects.filter(published=False)
+    
+    return render(request, "app_website/view_draft_posts.html", {'posts':draft_posts})

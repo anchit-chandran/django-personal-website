@@ -15,35 +15,50 @@
             <ul class="navbar-nav mb-2 mb-lg-0">
 
                 <li class="nav-item me-3">
-                    <a class="nav-link {% if request.path == index_url %}active {% endif %}" aria-current="page" href="{% url 'index' %}">
+                    <a class="nav-link {% if request.path == index_url %}active {% endif %}" aria-current="page"
+                        href="{% url 'index' %}">
                         Home
                     </a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link {% if request.path == about_url %}active {% endif %}"" aria-current="page" href="{% url 'about' %}">
+                    <a class="nav-link {% if request.path == about_url %}active {% endif %}"" aria-current=" page"
+                        href="{% url 'about' %}">
                         About
                     </a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link {% if 'project' in request.path %}active {% endif %}"" aria-current="page" href="{% url 'projects' %}">
+                    <a class="nav-link {% if 'project' in request.path %}active {% endif %}"" aria-current=" page"
+                        href="{% url 'projects' %}">
                         Projects
                     </a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link {% if 'blog' in request.path %}active {% endif %}"" aria-current="page" href="{% url 'blog' %}">
+                    <a class="nav-link {% if 'blog' in request.path %}active {% endif %}"" aria-current=" page"
+                        href="{% url 'blog' %}">
                         Blog
                     </a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link {% if request.path == contact_url %}active {% endif %}"" aria-current="page" href="{% url 'contact' %}">
+                    <a class="nav-link {% if request.path == contact_url %}active {% endif %}"" aria-current=" page"
+                        href="{% url 'contact' %}">
                         Contact
                     </a>
                 </li>
                 {% if user.is_authenticated %}
-                <li class="nav-item me-3">
-                    <a class="nav-link" aria-current="page" href="{% url 'admin_user_view' %}">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         Admin
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{% url 'admin_user_view' %}">View all actions</a></li>
+                        <li><a class="dropdown-item" href="{% url 'create_draft_post' %}">Create new blog post</a></li>
+                        <li><a class="dropdown-item" href="{% url 'view_draft_posts' %}">View draft posts</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="{% url 'admin:index' %}">Database management</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item me-3">
                     <a class="nav-link" aria-current="page" href="{% url 'logout_user' %}">

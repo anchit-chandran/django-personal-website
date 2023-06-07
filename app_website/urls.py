@@ -13,5 +13,6 @@ urlpatterns = [
     path("login", views.login_user, name="login_user"),
     path("logout", views.logout_user, name="logout_user"),
     path("admin_user", views.admin_user_view, name="admin_user_view"),
-    path("create_post", views.create_post, name="create_post"),
+    path("create_draft_post", views.create_draft_post, name="create_draft_post"),
+    path("view_draft_posts", views.view_draft_posts, name="view_draft_posts")
 ]

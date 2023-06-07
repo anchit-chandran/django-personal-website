@@ -1,18 +1,20 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
 class BlogPost(models.Model):
 
-    posted_at = models.DateTimeField(blank=True, null=True)
-    title = models.CharField(max_length=100, blank=True, null=True)
+    posted_at = models.DateTimeField(blank=True, null=True, default=timezone.now)
+    title = models.CharField(max_length=100, blank=False, null=True)
     header_img = models.URLField(max_length=500, default='https://images.unsplash.com/photo-1559291001-693fb9166cba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80', null=True)
-    content = models.TextField(max_length=10000, blank=True, null=True)
+    content = models.TextField(max_length=10000, blank=False, null=True)
     featured = models.BooleanField(default=False, null=True)
+    published = models.BooleanField(default=False, null=True)
     
     def __str__(self):
         featured = "*" if self.featured else ""
-        return f"{featured}Post {self.title} by {self.author}"
+        return f"{featured}Post {self.title}"
 
 
 class Skill(models.Model):
