@@ -15,18 +15,25 @@ class LoginForm(ModelForm):
             "password": PasswordInput(attrs={"class": "form-control"}),
         }
 
+
 class CreatePostForm(ModelForm):
-    
     class Meta:
         model = BlogPost
         fields = "__all__"
-        
+
         widgets = {
-            "posted_at": forms.DateInput(attrs={"class": "form-control"}),
+            "posted_at": forms.DateInput(
+                attrs={
+                    "class": "form-control",
+                    "type": "date",
+                }
+            ),
             "author": forms.Select(attrs={"class": "form-control"}),
-            "category": forms.Select(attrs={"class": "form-control"}),
+            "category": forms.Select(attrs={"class": "form-select"}),
             "title": forms.TextInput(attrs={"class": "form-control"}),
             "header_img": forms.TextInput(attrs={"class": "form-control"}),
             "content": forms.Textarea(attrs={"class": "form-control"}),
-            "featured": forms.CheckboxInput(attrs={"class": "form-control"}),
+            "featured": forms.CheckboxInput(attrs={"class": "form-check-input"}),
         }
+
+
