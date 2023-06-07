@@ -124,6 +124,7 @@ def admin_user_view(request):
     return render(request, "app_website/admin_user_view.html")
 
 
+@login_required
 def create_draft_post(request):
     if request.method == "POST":
         form = CreateDraftPostForm(request.POST, initial={"published": False})
@@ -137,12 +138,14 @@ def create_draft_post(request):
     return render(request, "app_website/create_post.html", {"form": form})
 
 
+@login_required
 def view_draft_posts(request):
     draft_posts = BlogPost.objects.filter(published=False)
 
     return render(request, "app_website/view_draft_posts.html", {"posts": draft_posts})
 
 
+@login_required
 def publish_draft_post(request, post_id):
     
     post = BlogPost.objects.get(id=post_id)
