@@ -4,7 +4,10 @@
   --bodyFont: Mulish, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
     Arial, sans-serif;
   --link-color: #f12844;
+
   --white: #ffffff;
+  --black: #000000;
+
   --brand: #e71d36;
   --accent: #e3d26f;
   --muted: #a9a9a9;
@@ -17,6 +20,8 @@
   --pill-text-color: #eaa7ba;
 
   --table-hover-bg: #41060c3d;
+
+  --modal-bg-color: #222222;
 }
 
 body {
@@ -312,3 +317,4 @@ section.recent-projects > .title-col {
 .table.table-dark:hover {
   --bs-table-hover-bg: var(--table-hover-bg);
 }
+

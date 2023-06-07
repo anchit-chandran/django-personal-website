@@ -37,3 +37,6 @@ class CreateDraftPostForm(ModelForm):
         }
 
 
+class PublishPostForm(forms.Form):
+    
+    confirm_publish = forms.BooleanField()

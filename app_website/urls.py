@@ -14,5 +14,6 @@ urlpatterns = [
     path("logout", views.logout_user, name="logout_user"),
     path("admin_user", views.admin_user_view, name="admin_user_view"),
     path("create_draft_post", views.create_draft_post, name="create_draft_post"),
-    path("view_draft_posts", views.view_draft_posts, name="view_draft_posts")
+    path("view_draft_posts", views.view_draft_posts, name="view_draft_posts"),
+    path("publish/<int:post_id>", views.publish_draft_post, name="publish_draft_post"),
 ]

@@ -13,7 +13,7 @@
                     <i class="read_arrow bi bi-arrow-left"></i>
                     Drafts
                 </a>
-                <a href="{% url 'view_draft_posts' %}" class="read_btn btn btn-outline-primary btn-sm">
+                <a href="{% url 'publish_draft_post' post_id=post.id %}" class="read_btn btn btn-outline-primary btn-sm">
                     Publish
                     <i class="read_arrow bi bi-arrow-right"></i>
                 </a>
@@ -37,4 +37,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

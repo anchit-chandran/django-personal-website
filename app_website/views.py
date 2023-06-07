@@ -17,7 +17,7 @@ from .general_functions import (
 from .constants import (
     DEFAULT_HEADER_IMG_URL,
 )
-from .forms import LoginForm, CreateDraftPostForm
+from .forms import LoginForm, CreateDraftPostForm, PublishPostForm
 
 
 # Create your views here.
@@ -33,22 +33,22 @@ def index(request):
         featured_projects = Project.objects.filter(featured=True)
     else:
         featured_projects = Project.objects.all()[:3]
-    
+
     # get just the first para from the md content
     for project in featured_projects:
         md_html = md.markdown(project.content)
-        p_close_tag_index = md_html.find('</p>')+4
+        p_close_tag_index = md_html.find("</p>") + 4
         projects_first_p = md_html[:p_close_tag_index]
-        
+
         # assign to python project object .content attribute
         project.content = projects_first_p
-        
+
     return render(
         request,
         "app_website/index.html",
         {
             "posts": featured_blog_posts,
-            "projects" : featured_projects,
+            "projects": featured_projects,
             "DEFAULT_HEADER_IMG_URL": DEFAULT_HEADER_IMG_URL.DEFAULT_HEADER_IMG_URL,
         },
     )
@@ -62,46 +62,43 @@ def view_post(request, post_id):
         request, "app_website/post.html", {"post": post, "reading_time": reading_time}
     )
 
+
 def view_project(request, project_id):
-    
     project = Project.objects.get(id=project_id)
-    
-    return render(
-        request, "app_website/project.html", {"project": project}
-    )
+
+    return render(request, "app_website/project.html", {"project": project})
+
 
 def about(request):
     return render(request, "app_website/about.html")
 
 
 def projects(request):
-    
     projects = Project.objects.all()
-    
+
     # get just the first para from the md content
     for project in projects:
         md_html = md.markdown(project.content)
-        p_close_tag_index = md_html.find('</p>')+4
+        p_close_tag_index = md_html.find("</p>") + 4
         projects_first_p = md_html[:p_close_tag_index]
-        
+
         # assign to python project object .content attribute
         project.content = projects_first_p
-    
-    return render(request, "app_website/projects.html", {"projects":projects})
+
+    return render(request, "app_website/projects.html", {"projects": projects})
 
 
 def blog(request):
-    posts = BlogPost.objects.all().order_by("-posted_at")
+    posts = BlogPost.objects.filter(published=True).order_by("-posted_at")
     return render(request, "app_website/blog.html", {"posts": posts})
 
 
 def contact(request):
     return render(request, "app_website/contact.html")
 
+
 def login_user(request):
-    
     if request.method == "POST":
-    
         username = request.POST["username"]
         password = request.POST["password"]
         user = authenticate(request, username=username, password=password)
@@ -111,37 +108,57 @@ def login_user(request):
             return redirect("index")
 
     form = LoginForm()
-    
-    return render(request, "app_website/login.html", {"form":form})
+
+    return render(request, "app_website/login.html", {"form": form})
+
 
 @login_required
 def logout_user(request):
-    
     logout(request)
-    
+
     return redirect("index")
+
 
 @login_required
 def admin_user_view(request):
-    
     return render(request, "app_website/admin_user_view.html")
 
+
 def create_draft_post(request):
+    if request.method == "POST":
+        form = CreateDraftPostForm(request.POST, initial={"published": False})
+
+        if form.is_valid():
+            form.save()
+            return redirect("view_draft_posts")
+
+    form = CreateDraftPostForm()
+
+    return render(request, "app_website/create_post.html", {"form": form})
+
+
+def view_draft_posts(request):
+    draft_posts = BlogPost.objects.filter(published=False)
+
+    return render(request, "app_website/view_draft_posts.html", {"posts": draft_posts})
+
+
+def publish_draft_post(request, post_id):
+    
+    post = BlogPost.objects.get(id=post_id)
     
     if request.method == "POST":
         
-        form = CreateDraftPostForm(request.POST, initial={"published":False})
+        form = PublishPostForm(request.POST)
         
         if form.is_valid():
-            form.save()
-            return redirect("view_draft_posts")        
+            if form.cleaned_data["confirm_publish"]:
+                post_to_publish = BlogPost.objects.get(id=post_id)
+                post_to_publish.published = True
+                post_to_publish.save()
+                print("PUBLISH FORM + EMAIL OUT!")
+        
+                return redirect("blog")
     
-    form = CreateDraftPostForm()
-    
-    return render(request, "app_website/create_post.html", {"form":form})
-
-def view_draft_posts(request):
-    
-    draft_posts = BlogPost.objects.filter(published=False)
-    
-    return render(request, "app_website/view_draft_posts.html", {'posts':draft_posts})
+    form = PublishPostForm()
+    return render(request, "app_website/publish_draft_post.html", {"post": post, "form":form})
