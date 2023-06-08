@@ -135,3 +135,4 @@ def seed_superuser():
         superuser.save()
     
     print(f"Superuser username: {username}\nSuperuser password: {password}")
+

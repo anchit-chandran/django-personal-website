@@ -11,6 +11,7 @@ from django.core.mail import send_mail
 from .models import (
     BlogPost,
     Project,
+    Subscribers,
 )
 from .general_functions import (
     calculate_reading_time,
@@ -145,61 +146,72 @@ def view_draft_posts(request):
 
     return render(request, "app_website/view_draft_posts.html", {"posts": draft_posts})
 
+
 @login_required
 def edit_post(request, post_id):
-    
     post = BlogPost.objects.get(id=post_id)
-    
+
     if request.method == "POST":
         form = CreateDraftPostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
             return redirect("view_post", post_id=post_id)
-    
+
     form = CreateDraftPostForm(instance=post)
-    
-    return render(request, "app_website/edit_post.html", {"form":form})
+
+    return render(request, "app_website/edit_post.html", {"form": form})
+
 
 @login_required
 def publish_draft_post(request, post_id):
-    
     post = BlogPost.objects.get(id=post_id)
     
+    subscriber_count = Subscribers.objects.filter(subscribed=True).count()
+
     if request.method == "POST":
-        
         form = PublishPostForm(request.POST)
-        
+
         if form.is_valid():
             if form.cleaned_data["confirm_publish"]:
-                
                 # publish post onto website
                 post_to_publish = BlogPost.objects.get(id=post_id)
                 post_to_publish.published = True
                 post_to_publish.save()
-                
+
                 html_content = md.markdown(post_to_publish.content)
-                
+
                 # format meta content
-                post_to_publish.posted_at = post_to_publish.posted_at.strftime('%-d %b %Y')
-                post.reading_time = post.calculate_reading_time() if post.calculate_reading_time() >= 1 else '< 1'
+                post_to_publish.posted_at = post_to_publish.posted_at.strftime(
+                    "%-d %b %Y"
+                )
+                post.reading_time = (
+                    post.calculate_reading_time()
+                    if post.calculate_reading_time() >= 1
+                    else "< 1"
+                )
                 meta_content = f'<p class="text-center"><small>{ post_to_publish.posted_at} • Reading time: {post.reading_time} mins</small></p>'
-                
+
                 # get img
                 img = f'<img src="{ post.header_img }" style="height: 250px; width: 250px; margin-right: auto; margin-left: auto;">'
-                
+
                 # put message together for email in html format
-                message = meta_content + '\n' + img + '\n' + html_content
+                message = meta_content + "\n" + img + "\n" + html_content
                 
+                # get subscribers
+                subscribers = list(Subscribers.objects.filter(subscribed=True).values_list("email", flat=True))
+
                 send_mail(
                     subject=post_to_publish.title,
                     message=post_to_publish.content,
                     html_message=message,
                     from_email="anchit97123@gmail.com",
-                    recipient_list=["anchit97@live.co.uk"],
+                    recipient_list=subscribers,
                     fail_silently=False,
                 )
-        
+
                 return redirect("blog")
-    
+
     form = PublishPostForm()
-    return render(request, "app_website/publish_draft_post.html", {"post": post, "form":form})
+    return render(
+        request, "app_website/publish_draft_post.html", {"post": post, "form": form, "subscriber_count":subscriber_count}
+    )
