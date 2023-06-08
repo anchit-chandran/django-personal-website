@@ -16,4 +16,5 @@ urlpatterns = [
     path("create_draft_post", views.create_draft_post, name="create_draft_post"),
     path("view_draft_posts", views.view_draft_posts, name="view_draft_posts"),
     path("publish/<int:post_id>", views.publish_draft_post, name="publish_draft_post"),
+    path("edit_post/<int:post_id>", views.edit_post, name="edit_post")
 ]

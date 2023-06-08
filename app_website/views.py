@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 import markdown as md
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 
 # Personal imports
 from .models import (
@@ -144,6 +145,20 @@ def view_draft_posts(request):
 
     return render(request, "app_website/view_draft_posts.html", {"posts": draft_posts})
 
+@login_required
+def edit_post(request, post_id):
+    
+    post = BlogPost.objects.get(id=post_id)
+    
+    if request.method == "POST":
+        form = CreateDraftPostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect("view_post", post_id=post_id)
+    
+    form = CreateDraftPostForm(instance=post)
+    
+    return render(request, "app_website/edit_post.html", {"form":form})
 
 @login_required
 def publish_draft_post(request, post_id):
@@ -156,12 +171,20 @@ def publish_draft_post(request, post_id):
         
         if form.is_valid():
             if form.cleaned_data["confirm_publish"]:
+                
+                # publish post onto website
                 post_to_publish = BlogPost.objects.get(id=post_id)
                 post_to_publish.published = True
-                post_to_publish.save()
-                print("PUBLISH FORM + EMAIL OUT!")
+                # post_to_publish.save()
+                print(md.markdown(post_to_publish.content))
+                
+                # send email
+                # send_mail(
+                #     subject=post_to_publish.title,
+                #     message=post.content
+                # )
         
-                return redirect("blog")
+                # return redirect("blog")
     
     form = PublishPostForm()
     return render(request, "app_website/publish_draft_post.html", {"post": post, "form":form})

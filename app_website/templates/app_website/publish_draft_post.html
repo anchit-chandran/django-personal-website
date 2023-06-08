@@ -1,5 +1,7 @@
 {% extends 'app_website/base.html' %}
 
+{% load markdown_extras %}
+
 {% block content %}
 <div class="row markdown-section justify-content-center">
     <div class="col">
@@ -13,6 +15,7 @@
         <div class="row">
             <div class="col">
                 <h1>Post title: {{ post.title }}</h1>
+                <p>This post will be published on the website and sent to <b>XXX subscribers</b>.</p>
             </div>
 
             <form method="post">
@@ -20,7 +23,30 @@
                 {{form.as_p}}
                 <input type="submit" value="Publish" class="btn btn-outline-primary">
             </form>
+        </div>
+    </div>
+</div>
+<div class="row markdown-section justify-content-center">
+    <div class="col">
+        <div class="post-title-wrapper py-4 mt-5">
+            {% if not post.published %}
+            
+            <p class="text-center unpublished">UNPUBLISHED</p>
 
+            {% endif %}
+
+            <p class="text-center meta"><small>{{ post.posted_at|date:"j M Y"}} • {{ reading_time }} mins</small></p>
+            <h1 class="text-center">{{ post.title }}</h1>
+        </div>
+
+        <div class="placeholder-box">
+            <img src="{{ post.header_img }}" alt="" class="object-fit">
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-10 post-content">
+                {{ post.content | markdown | safe }}
+            </div>
         </div>
     </div>
 </div>
