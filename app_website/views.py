@@ -58,10 +58,14 @@ def index(request):
 
 def view_post(request, post_id):
     post = BlogPost.objects.get(id=post_id)
-
-    reading_time = calculate_reading_time(post.content)
+    
+    post.reading_time = (
+                    post.calculate_reading_time()
+                    if post.calculate_reading_time() >= 1
+                    else "< 1"
+                )
     return render(
-        request, "app_website/post.html", {"post": post, "reading_time": reading_time}
+        request, "app_website/post.html", {"post": post}
     )
 
 
