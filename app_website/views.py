@@ -175,16 +175,31 @@ def publish_draft_post(request, post_id):
                 # publish post onto website
                 post_to_publish = BlogPost.objects.get(id=post_id)
                 post_to_publish.published = True
-                # post_to_publish.save()
-                print(md.markdown(post_to_publish.content))
+                post_to_publish.save()
                 
-                # send email
-                # send_mail(
-                #     subject=post_to_publish.title,
-                #     message=post.content
-                # )
+                html_content = md.markdown(post_to_publish.content)
+                
+                # format meta content
+                post_to_publish.posted_at = post_to_publish.posted_at.strftime('%-d %b %Y')
+                post.reading_time = post.calculate_reading_time() if post.calculate_reading_time() >= 1 else '< 1'
+                meta_content = f'<p class="text-center"><small>{ post_to_publish.posted_at} • Reading time: {post.reading_time} mins</small></p>'
+                
+                # get img
+                img = f'<img src="{ post.header_img }" style="height: 250px; width: 250px; margin-right: auto; margin-left: auto;">'
+                
+                # put message together for email in html format
+                message = meta_content + '\n' + img + '\n' + html_content
+                
+                send_mail(
+                    subject=post_to_publish.title,
+                    message=post_to_publish.content,
+                    html_message=message,
+                    from_email="anchit97123@gmail.com",
+                    recipient_list=["anchit97@live.co.uk"],
+                    fail_silently=False,
+                )
         
-                # return redirect("blog")
+                return redirect("blog")
     
     form = PublishPostForm()
     return render(request, "app_website/publish_draft_post.html", {"post": post, "form":form})

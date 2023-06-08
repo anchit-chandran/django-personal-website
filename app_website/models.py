@@ -1,3 +1,5 @@
+import re
+
 from django.db import models
 from django.utils import timezone
 
@@ -11,6 +13,27 @@ class BlogPost(models.Model):
     content = models.TextField(max_length=10000, blank=False, null=True)
     featured = models.BooleanField(default=False, null=True)
     published = models.BooleanField(default=False, null=True)
+    
+    def calculate_reading_time(self, reading_speed:int=200)->int:
+        """Calculates reading time
+        
+        Returns -1 if no content.
+        """
+        
+        if not self.content:
+            return -1.0
+        
+        # Remove any non-word characters (e.g., punctuation)
+        cleaned_text = re.sub(r'[^\w\s]', '', self.content)
+
+        # Split the text into words
+        words = cleaned_text.split()
+
+        # Calculate the estimated reading time in minutes
+        estimated_time = len(words) / reading_speed
+
+        # Return the estimated reading time rounded to the nearest whole number
+        return round(estimated_time)
     
     def __str__(self):
         featured = "*" if self.featured else ""
