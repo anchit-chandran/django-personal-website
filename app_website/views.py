@@ -13,9 +13,6 @@ from .models import (
     Project,
     Subscribers,
 )
-from .general_functions import (
-    calculate_reading_time,
-)
 from .constants import (
     DEFAULT_HEADER_IMG_URL,
 )
@@ -59,11 +56,6 @@ def index(request):
 def view_post(request, post_id):
     post = BlogPost.objects.get(id=post_id)
     
-    post.reading_time = (
-                    post.calculate_reading_time()
-                    if post.calculate_reading_time() >= 1
-                    else "< 1"
-                )
     return render(
         request, "app_website/post.html", {"post": post}
     )
@@ -188,11 +180,8 @@ def publish_draft_post(request, post_id):
                 post_to_publish.posted_at = post_to_publish.posted_at.strftime(
                     "%-d %b %Y"
                 )
-                post.reading_time = (
-                    post.calculate_reading_time()
-                    if post.calculate_reading_time() >= 1
-                    else "< 1"
-                )
+                post.reading_time = post.calculate_reading_time()
+                
                 meta_content = f'<p class="text-center"><small>{ post_to_publish.posted_at} • Reading time: {post.reading_time} mins</small></p>'
 
                 # get img

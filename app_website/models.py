@@ -31,6 +31,9 @@ class BlogPost(models.Model):
 
         # Calculate the estimated reading time in minutes
         estimated_time = len(words) / reading_speed
+        
+        if estimated_time < 1:
+            return 1
 
         # Return the estimated reading time rounded to the nearest whole number
         return round(estimated_time)
