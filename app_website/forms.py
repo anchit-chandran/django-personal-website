@@ -14,6 +14,9 @@ class SubscribeForm(ModelForm):
             "name": TextInput(attrs={"class": "form-control","placeholder":"Anchit Chandran"}),
             "email": TextInput(attrs={"class": "form-control","placeholder":"hello@anchit.me"}),
         }
+    
+    def clean_subscribed(self):
+        return True
 
 class LoginForm(ModelForm):
     class Meta:

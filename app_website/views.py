@@ -21,14 +21,13 @@ from .forms import LoginForm, CreateDraftPostForm, PublishPostForm, SubscribeFor
 
 # Create your views here.
 def index(request):
-    
     # person hits subscribe to newsletter
-    if request.method=='POST':
+    if request.method == "POST":
         form = SubscribeForm(request.POST)
         if form.is_valid():
+            form.cleaned_data["subscribed"] = True
             form.save()
-            print('Successfully subscribed!')
-    
+
     # get blog posts
     if BlogPost.objects.filter(featured=True).count() >= 3:
         featured_blog_posts = BlogPost.objects.filter(featured=True)
@@ -49,7 +48,7 @@ def index(request):
 
         # assign to python project object .content attribute
         project.content = projects_first_p
-    
+
     # get subscribe modal form
     modal_form = SubscribeForm()
 
@@ -60,7 +59,7 @@ def index(request):
             "posts": featured_blog_posts,
             "projects": featured_projects,
             "DEFAULT_HEADER_IMG_URL": DEFAULT_HEADER_IMG_URL.DEFAULT_HEADER_IMG_URL,
-            "modal_form":modal_form,
+            "modal_form": modal_form,
         },
     )
 
@@ -97,9 +96,8 @@ def projects(request):
 
 
 def blog(request):
-    
     posts = BlogPost.objects.filter(published=True).order_by("-posted_at")
-    
+
     return render(request, "app_website/blog.html", {"posts": posts})
 
 
@@ -225,4 +223,33 @@ def publish_draft_post(request, post_id):
         request,
         "app_website/publish_draft_post.html",
         {"post": post, "form": form, "subscriber_count": subscriber_count},
+    )
+
+
+@login_required
+def view_subscribers(request):
+    subscribers = Subscriber.objects.all().order_by("-subscribed")
+
+    return render(
+        request, "app_website/view_subscribers.html", {"subscribers": subscribers}
+    )
+
+
+@login_required
+def edit_subscriber(request, subscriber_id):
+    subscriber = Subscriber.objects.get(id=subscriber_id)
+
+    if request.method == "POST":
+        form = SubscribeForm(request.POST, instance=subscriber)
+
+        if form.is_valid():
+            form.save()
+            return redirect("view_subscribers")
+
+    form = SubscribeForm(instance=subscriber)
+
+    return render(
+        request,
+        "app_website/view_subscriber.html",
+        {"form": form, "subscriber": subscriber},
     )
