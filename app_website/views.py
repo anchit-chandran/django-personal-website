@@ -11,16 +11,24 @@ from django.core.mail import send_mail
 from .models import (
     BlogPost,
     Project,
-    Subscribers,
+    Subscriber,
 )
 from .constants import (
     DEFAULT_HEADER_IMG_URL,
 )
-from .forms import LoginForm, CreateDraftPostForm, PublishPostForm
+from .forms import LoginForm, CreateDraftPostForm, PublishPostForm, SubscribeForm
 
 
 # Create your views here.
 def index(request):
+    
+    # person hits subscribe to newsletter
+    if request.method=='POST':
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print('Successfully subscribed!')
+    
     # get blog posts
     if BlogPost.objects.filter(featured=True).count() >= 3:
         featured_blog_posts = BlogPost.objects.filter(featured=True)
@@ -41,6 +49,9 @@ def index(request):
 
         # assign to python project object .content attribute
         project.content = projects_first_p
+    
+    # get subscribe modal form
+    modal_form = SubscribeForm()
 
     return render(
         request,
@@ -49,16 +60,15 @@ def index(request):
             "posts": featured_blog_posts,
             "projects": featured_projects,
             "DEFAULT_HEADER_IMG_URL": DEFAULT_HEADER_IMG_URL.DEFAULT_HEADER_IMG_URL,
+            "modal_form":modal_form,
         },
     )
 
 
 def view_post(request, post_id):
     post = BlogPost.objects.get(id=post_id)
-    
-    return render(
-        request, "app_website/post.html", {"post": post}
-    )
+
+    return render(request, "app_website/post.html", {"post": post})
 
 
 def view_project(request, project_id):
@@ -87,7 +97,9 @@ def projects(request):
 
 
 def blog(request):
+    
     posts = BlogPost.objects.filter(published=True).order_by("-posted_at")
+    
     return render(request, "app_website/blog.html", {"posts": posts})
 
 
@@ -161,8 +173,8 @@ def edit_post(request, post_id):
 @login_required
 def publish_draft_post(request, post_id):
     post = BlogPost.objects.get(id=post_id)
-    
-    subscriber_count = Subscribers.objects.filter(subscribed=True).count()
+
+    subscriber_count = Subscriber.objects.filter(subscribed=True).count()
 
     if request.method == "POST":
         form = PublishPostForm(request.POST)
@@ -181,7 +193,7 @@ def publish_draft_post(request, post_id):
                     "%-d %b %Y"
                 )
                 post.reading_time = post.calculate_reading_time()
-                
+
                 meta_content = f'<p class="text-center"><small>{ post_to_publish.posted_at} • Reading time: {post.reading_time} mins</small></p>'
 
                 # get img
@@ -189,9 +201,13 @@ def publish_draft_post(request, post_id):
 
                 # put message together for email in html format
                 message = meta_content + "\n" + img + "\n" + html_content
-                
+
                 # get subscribers
-                subscribers = list(Subscribers.objects.filter(subscribed=True).values_list("email", flat=True))
+                subscribers = list(
+                    Subscriber.objects.filter(subscribed=True).values_list(
+                        "email", flat=True
+                    )
+                )
 
                 send_mail(
                     subject=post_to_publish.title,
@@ -206,5 +222,7 @@ def publish_draft_post(request, post_id):
 
     form = PublishPostForm()
     return render(
-        request, "app_website/publish_draft_post.html", {"post": post, "form": form, "subscriber_count":subscriber_count}
+        request,
+        "app_website/publish_draft_post.html",
+        {"post": post, "form": form, "subscriber_count": subscriber_count},
     )

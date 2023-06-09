@@ -16,6 +16,9 @@
         <div class="btn-wrapper">
             <a href="{% url 'contact' %}" class="btn btn-outline-primary">Get in touch</a>
             <a href="{% url 'projects' %}" class="btn btn-outline-primary">Projects</a>
+            
+            {% include 'app_website/subscribe_form.html' %}
+
         </div>
     </div>
 </section>
@@ -38,7 +41,8 @@
                     <div class="card-body px-0">
 
                         <p class="card-title">{{ post.title }}</p>
-                        <p class="card-text"><small class="text-body-secondary muted">{{ post.posted_at|date:"j M Y"}}</small></p>
+                        <p class="card-text"><small class="text-body-secondary muted">{{ post.posted_at|date:"j M
+                                Y"}}</small></p>
                     </div>
                 </div>
             </div>
@@ -67,7 +71,7 @@
                         <p class="card-text">{{ project.content | safe }}</p>
                         <div class="pills">
                             {% for skill in project.skills.all %}
-                                <div class="p-2 badge pill">{{ skill }}</div>
+                            <div class="p-2 badge pill">{{ skill }}</div>
                             {% endfor %}
                         </div>
                     </div>

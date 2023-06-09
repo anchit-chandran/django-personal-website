@@ -2,8 +2,18 @@ from django.forms import ModelForm, TextInput, PasswordInput
 from django import forms
 from django.contrib.auth.models import User
 
-from app_website.models import BlogPost
+from app_website.models import BlogPost, Subscriber
 
+class SubscribeForm(ModelForm):
+    
+    class Meta:
+        model=Subscriber
+        fields = "__all__"
+        
+        widgets = {
+            "name": TextInput(attrs={"class": "form-control","placeholder":"Anchit Chandran"}),
+            "email": TextInput(attrs={"class": "form-control","placeholder":"hello@anchit.me"}),
+        }
 
 class LoginForm(ModelForm):
     class Meta:

@@ -63,8 +63,12 @@ class Project(models.Model):
         featured = "*" if self.featured else ""
         return f"{featured}{self.title}"
 
-class Subscribers(models.Model):
+class Subscriber(models.Model):
     
     email = models.CharField(max_length=500)
     name = models.CharField(max_length=500)
     subscribed = models.BooleanField(default=False)
+    
+    def __str__(self):
+        
+        return f"{self.name}"
