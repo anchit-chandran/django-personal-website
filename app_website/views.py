@@ -259,6 +259,8 @@ def publish_draft_post(request, post_id):
                     recipient_list=subscribers,
                     fail_silently=False,
                 )
+                
+                messages.success(request,f'Post published and emailed out to {len(subscribers)} subscribers 🔥')
 
                 return redirect("blog")
 
