@@ -2,12 +2,13 @@
 
 # 3rd Party imports
 from django.shortcuts import render, redirect
-import markdown as md
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
+import markdown as md
 
 # Personal imports
 from .models import (
@@ -33,6 +34,9 @@ def index(request):
             
             # ensure email not already used
             if Subscriber.objects.filter(email=form.cleaned_data['email']).exists():
+                
+                # add email already used message
+                messages.error(request, "Uh oh, looks like that email's already signed up 😲", extra_tags='danger')
 
                 return redirect('index')
             
@@ -61,6 +65,9 @@ def index(request):
                 # update .confirmation_email_sent field
                 subscriber.confirmation_email_sent = True
                 subscriber.save()
+                
+                # add success message
+                messages.success(request, "Thanks! You should receive an email confirmation soon 📩")
                 
                 return redirect('index')
             
