@@ -123,6 +123,7 @@ nav a.nav-link {
 .index-btn-wrapper {
   display: flex;
   flex-direction: column;
+  flex-grow: 0.3;
 }
 
 .index-btn-wrapper > * {
@@ -177,6 +178,7 @@ nav a.nav-link {
   .index-btn-wrapper {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
   }
 
   .index-btn-wrapper > * {
