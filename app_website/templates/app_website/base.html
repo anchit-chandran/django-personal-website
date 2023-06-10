@@ -41,11 +41,13 @@
     {% include "app_website/navigation.html" %}
     <div class="container">
         {% if messages %}
-        <ul class="messages">
-            {% for message in messages %}
-            <li{% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" {% endif %} >{{ message }}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></li>
-                {% endfor %}
-        </ul>
+
+        {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert" {% endif %}>
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
         {% endif %}
         {% block content %}
         {% endblock content %}
