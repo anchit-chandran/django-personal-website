@@ -11,21 +11,23 @@
             {% if user.is_authenticated %}
                 {% if not post.published %}
                 <div class="draft-actions-wrapper d-flex justify-content-between mb-4">
-                    <a href="{% url 'view_draft_posts' %}" class="read_btn btn btn-outline-primary btn-sm">
+                    <a href="{% url 'view_posts_admin' %}" class="read_btn btn btn-outline-primary btn-sm">
                         <i class="read_arrow bi bi-arrow-left"></i>
                         Drafts
                     </a>
                     <a href="{% url 'edit_post' post_id=post.id %}" class="read_btn btn btn-outline-primary btn-sm">
                         Edit
-                        <i class="read_arrow bi bi-arrow-right"></i>
+                        <i class="bi bi-pen-fill"></i>
                     </a>
                     <a href="{% url 'publish_draft_post' post_id=post.id %}" class="read_btn btn btn-outline-primary btn-sm">
                         Publish
                         <i class="read_arrow bi bi-arrow-right"></i>
                     </a>
                 </div>
-                <p class="text-center unpublished">UNPUBLISHED</p>
-                {% endif %}
+                <p class="text-center unpublished-text">UNPUBLISHED</p>
+                {% else %}
+                <a href="{% url 'edit_post' post.id %}">Edit</a>
+                {% endif %}  
             {% endif %}
 
             <p class="text-center meta"><small>{{ post.posted_at|date:"j M Y"}} • {{ post.calculate_reading_time }} mins</small></p>

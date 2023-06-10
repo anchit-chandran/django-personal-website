@@ -262,7 +262,7 @@ section.recent-projects > .title-col {
   text-transform: uppercase;
 }
 
-.unpublished {
+.unpublished-text {
   color: var(--brand);
 }
 
@@ -305,8 +305,8 @@ section.recent-projects > .title-col {
 }
 
 .markdown-section .post-content img {
-  max-width: 100%;
-  height: auto;
+  width: auto;
+  max-height: 25em;
 }
 
 /* PAGES */
@@ -339,6 +339,10 @@ section.recent-projects > .title-col {
 
 .table.table-dark:hover {
   --bs-table-hover-bg: var(--table-hover-bg);
+}
+
+tr.unpublished {
+  font-style: italic;
 }
 
 /* MODALS */

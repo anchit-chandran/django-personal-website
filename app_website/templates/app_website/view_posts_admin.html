@@ -9,12 +9,24 @@
         </div>
 
         <table class="table table-hover table-dark">
+            <thead>
+                <th>Date Published</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </thead>
             <tbody>
                 {% for post in posts %}
-                <tr>
-                    <!-- <th scope="row">1</th> -->
+                <tr class="{% if not post.published %}unpublished muted{% endif %}">
                     <td>{{ post.posted_at|date:"j M" }}</td>
                     <td>{{ post.title }}</td>
+
+                    {% if post.published %}
+                    <td>Published</td>
+                    {% else %}
+                    <td>Draft</td>
+                    {% endif %}
+
                     <td class="read_btn_wrapper"> <a href="{% url 'view_post' post_id=post.id %}"
                             class="read_btn btn btn-outline-primary btn-sm">View <i
                                 class="read_arrow bi bi-arrow-right"></i></a></td>

@@ -183,7 +183,7 @@ def create_draft_post(request):
 
         if form.is_valid():
             form.save()
-            return redirect("view_draft_posts")
+            return redirect("view_posts_admin")
 
     form = CreateDraftPostForm()
 
@@ -191,10 +191,11 @@ def create_draft_post(request):
 
 
 @login_required
-def view_draft_posts(request):
-    draft_posts = BlogPost.objects.filter(published=False)
+def view_posts_admin(request):
+    
+    posts = BlogPost.objects.all().order_by("published")
 
-    return render(request, "app_website/view_draft_posts.html", {"posts": draft_posts})
+    return render(request, "app_website/view_posts_admin.html", {"posts": posts})
 
 
 @login_required
