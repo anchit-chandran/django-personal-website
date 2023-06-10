@@ -65,9 +65,11 @@ class Project(models.Model):
 
 class Subscriber(models.Model):
     
-    email = models.CharField(max_length=500)
-    name = models.CharField(max_length=500)
+    email = models.CharField(max_length=500, null=False, blank=False)
+    name = models.CharField(max_length=500, null=False, blank=False)
     subscribed = models.BooleanField(default=False)
+    
+    confirmation_email_sent = models.BooleanField(default=False)
     
     def __str__(self):
         

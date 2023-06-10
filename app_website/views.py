@@ -6,6 +6,8 @@ import markdown as md
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 # Personal imports
 from .models import (
@@ -21,12 +23,47 @@ from .forms import LoginForm, CreateDraftPostForm, PublishPostForm, SubscribeFor
 
 # Create your views here.
 def index(request):
+    
     # person hits subscribe to newsletter
     if request.method == "POST":
+        
         form = SubscribeForm(request.POST)
+        
         if form.is_valid():
+            
+            # ensure email not already used
+            if Subscriber.objects.filter(email=form.cleaned_data['email']).exists():
+
+                return redirect('index')
+            
             form.cleaned_data["subscribed"] = True
-            form.save()
+            subscriber = form.save()
+            
+            subscriber = Subscriber.objects.get(id=subscriber.id)
+            
+            if not subscriber.confirmation_email_sent:
+            
+                # get details for confirmation email
+                subject = f"Welcome, {subscriber.name}"
+                html_message = render_to_string('app_website/mailing_list_confirm_subscription.html',{'subscriber':subscriber})
+                plain_text = strip_tags(html_message)
+                
+                # send confirmation email
+                send_mail(
+                        subject=subject,
+                        message=plain_text,
+                        html_message=html_message,
+                        from_email="anchit97123@gmail.com",
+                        recipient_list=[subscriber.email],
+                        fail_silently=False,
+                    )
+                
+                # update .confirmation_email_sent field
+                subscriber.confirmation_email_sent = True
+                subscriber.save()
+                
+                return redirect('index')
+            
 
     # get blog posts
     if BlogPost.objects.filter(featured=True).count() >= 3:
