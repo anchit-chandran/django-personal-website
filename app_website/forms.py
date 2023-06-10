@@ -4,6 +4,18 @@ from django.contrib.auth.models import User
 
 from app_website.models import BlogPost, Subscriber
 
+class EditSubscriberForm(ModelForm):
+    
+    class Meta:
+        model=Subscriber
+        fields='__all__'
+        
+        widgets = {
+            "name": TextInput(attrs={"class": "form-control","placeholder":"Anchit Chandran"}),
+            "email": TextInput(attrs={"class": "form-control","placeholder":"hello@anchit.me"}),
+            "subscribed": forms.CheckboxInput(attrs={"class": "form-check-input","placeholder":"hello@anchit.me"}),         
+        }
+
 class SubscribeForm(ModelForm):
     
     class Meta:

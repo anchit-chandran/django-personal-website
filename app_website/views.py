@@ -19,7 +19,7 @@ from .models import (
 from .constants import (
     DEFAULT_HEADER_IMG_URL,
 )
-from .forms import LoginForm, CreateDraftPostForm, PublishPostForm, SubscribeForm
+from .forms import LoginForm, CreateDraftPostForm, PublishPostForm, SubscribeForm, EditSubscriberForm
 
 
 # Create your views here.
@@ -286,13 +286,13 @@ def edit_subscriber(request, subscriber_id):
     subscriber = Subscriber.objects.get(id=subscriber_id)
 
     if request.method == "POST":
-        form = SubscribeForm(request.POST, instance=subscriber)
+        form = EditSubscriberForm(request.POST, instance=subscriber)
 
         if form.is_valid():
             form.save()
             return redirect("view_subscribers")
 
-    form = SubscribeForm(instance=subscriber)
+    form = EditSubscriberForm(instance=subscriber)
 
     return render(
         request,
