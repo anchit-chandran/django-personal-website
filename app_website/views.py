@@ -253,3 +253,4 @@ def edit_subscriber(request, subscriber_id):
         "app_website/view_subscriber.html",
         {"form": form, "subscriber": subscriber},
     )
+    
