@@ -5,8 +5,10 @@ services:
   # web container - runs the django app
   web:
     build: .
+    image: personal_website_web:latest
     ports:
       - 8000:8000
+    container_name: django_web
     volumes:
       - .:/app/
     command: >
