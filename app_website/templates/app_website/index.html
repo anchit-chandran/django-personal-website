@@ -4,7 +4,7 @@
 
 {% block content %}
 <section class="row masthead justify-content-center align-items-center">
-    <div class="col text-center">
+    <div class="col h-100 text-center">
         <div class="col mb-5">
             <img src="https://pbs.twimg.com/profile_images/1533534495231594498/mRatF6Q8_400x400.jpg"
                 alt="anchit profile headshot" class="img img-fluid profile_headshot">
@@ -13,16 +13,19 @@
         <h3 class="mb-4">
             <em>Ex-doctor pivoting into software development.</em>
         </h3>
-        <div class="btn-wrapper">
-            <a href="{% url 'contact' %}" class="btn btn-outline-primary">Get in touch</a>
-            <a href="{% url 'projects' %}" class="btn btn-outline-primary">Projects</a>
+        <div class="col-12 d-flex justify-content-center mx-auto">
+            <div class="index-btn-wrapper">
+                <div class="two-btns-wrapper">
+                    <a href="{% url 'contact' %}" class="btn btn-outline-primary">Get in touch</a>
+                    <a href="{% url 'projects' %}" class="btn btn-outline-primary">Projects</a>
+                </div>
             
-            {% include 'app_website/subscribe_form.html' %}
-
+                {% include 'app_website/subscribe_form.html' %}
+            </div>
         </div>
     </div>
 </section>
-<section class="row index featured-articles justify-content-center mt-5 mt-md-0 fade_content">
+<section class="row index featured-articles justify-content-center mt-4 mt-md-0 fade_content">
     <div class="col-11 col-md-12 pb-2 px-0 d-flex justify-content-between align-items-end title-col">
         <h4 class="mb-0 index-sub-title">Featured Articles</h4>
         <a href="{% url 'blog' %}" class="btn btn-outline-primary btn-sm">See all <i class="bi bi-arrow-right"></i></a>
