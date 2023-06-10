@@ -9,28 +9,33 @@
         <div class="post-title-wrapper py-4 mt-5">
 
             {% if user.is_authenticated %}
-                {% if not post.published %}
+
                 <div class="draft-actions-wrapper d-flex justify-content-between mb-4">
                     <a href="{% url 'view_posts_admin' %}" class="read_btn btn btn-outline-primary btn-sm">
                         <i class="read_arrow bi bi-arrow-left"></i>
-                        Drafts
+                        Manage posts
                     </a>
                     <a href="{% url 'edit_post' post_id=post.id %}" class="read_btn btn btn-outline-primary btn-sm">
                         Edit
                         <i class="bi bi-pen-fill"></i>
                     </a>
-                    <a href="{% url 'publish_draft_post' post_id=post.id %}" class="read_btn btn btn-outline-primary btn-sm">
+                    {% if not post.published %}
+                    <a href="{% url 'publish_draft_post' post_id=post.id %}"
+                        class="read_btn btn btn-outline-primary btn-sm">
                         Publish
                         <i class="read_arrow bi bi-arrow-right"></i>
                     </a>
+                    {% endif %}
                 </div>
-                <p class="text-center unpublished-text">UNPUBLISHED</p>
-                {% else %}
-                <a href="{% url 'edit_post' post.id %}">Edit</a>
-                {% endif %}  
+
+                {% if not post.published %}
+                    <p class="text-center unpublished-text">UNPUBLISHED</p>
+                {% endif %}
+
             {% endif %}
 
-            <p class="text-center meta"><small>{{ post.posted_at|date:"j M Y"}} • {{ post.calculate_reading_time }} mins</small></p>
+            <p class="text-center meta"><small>{{ post.posted_at|date:"j M Y"}} • {{ post.calculate_reading_time }}
+                    mins</small></p>
             <h1 class="text-center">{{ post.title }}</h1>
         </div>
 

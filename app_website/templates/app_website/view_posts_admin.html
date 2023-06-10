@@ -5,7 +5,7 @@
     <div class="col">
 
         <div class="page-title-wrapper">
-            <h1 class="text-center">Draft Posts</h1>
+            <h1 class="text-center">ADMIN VIEW - Manage Blog Posts</h1>
         </div>
 
         <table class="table table-hover table-dark">
@@ -13,12 +13,15 @@
                 <th>Date Published</th>
                 <th>Title</th>
                 <th>Status</th>
+                <th>Featured</th>
                 <th>Actions</th>
             </thead>
             <tbody>
                 {% for post in posts %}
                 <tr class="{% if not post.published %}unpublished muted{% endif %}">
+                    
                     <td>{{ post.posted_at|date:"j M" }}</td>
+                    
                     <td>{{ post.title }}</td>
 
                     {% if post.published %}
@@ -27,9 +30,12 @@
                     <td>Draft</td>
                     {% endif %}
 
+                    <td>{% if post.featured %}<i class="bi bi-check-circle-fill"></i>{% endif %}</td>
+
                     <td class="read_btn_wrapper"> <a href="{% url 'view_post' post_id=post.id %}"
                             class="read_btn btn btn-outline-primary btn-sm">View <i
-                                class="read_arrow bi bi-arrow-right"></i></a></td>
+                                class="read_arrow bi bi-arrow-right"></i></a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

@@ -8,21 +8,33 @@
         <div class="post-title-wrapper py-4 mt-5">
             <a href="{% url 'view_post' post.id %}" class="read_btn btn btn-outline-primary btn-sm">
                 <i class="read_arrow bi bi-arrow-left"></i>
-                Edit
+            Edit
             </a>
             <h1 class="text-center">Publish blog post</h1>
         </div>
-        <div class="row">
-            <div class="col">
-                <p>This post will be published on the website and sent to <b>{{ subscriber_count }} subscribers</b>.</p>
-            </div>
 
-            <form method="post">
+            <form method="post" class="row form-group">
                 {% csrf_token %}
-                {{form.as_p}}
-                <input type="submit" value="Publish" class="btn btn-outline-primary">
+
+                <div class="col-12 mb-2">
+                    <p>This post will be published on the website and sent to <b>{{ subscriber_count }} subscribers</b>.</p>
+                </div>
+
+                <div class="col-12 mb-2">
+                    <div class="form-check">
+                        {{ form.confirm_publish }}
+                        <label class="form-check-label" for="{{ form.confirm_publish.id_for_label }}">
+                            {{ form.confirm_publish.label}}
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-3 mt-2">
+                    <input type="submit" value="Publish" class="btn btn-outline-primary">
+                </div>
+
             </form>
-        </div>
+
     </div>
 </div>
 <hr>
@@ -30,7 +42,7 @@
     <div class="col">
         <div class="post-title-wrapper py-4 mt-5">
             {% if not post.published %}
-            
+
             <p class="text-center unpublished">UNPUBLISHED</p>
 
             {% endif %}

@@ -19,7 +19,7 @@ from .models import (
 from .constants import (
     DEFAULT_HEADER_IMG_URL,
 )
-from .forms import LoginForm, CreateDraftPostForm, PublishPostForm, SubscribeForm, EditSubscriberForm
+from .forms import LoginForm, CreateDraftPostForm, PublishPostForm, SubscribeForm, EditSubscriberForm, EditPostForm
 
 
 # Create your views here.
@@ -72,11 +72,8 @@ def index(request):
                 return redirect('index')
             
 
-    # get blog posts
-    if BlogPost.objects.filter(featured=True).count() >= 3:
-        featured_blog_posts = BlogPost.objects.filter(featured=True)
-    else:
-        featured_blog_posts = BlogPost.objects.all()[:3]
+    # get featured blog posts
+    featured_blog_posts = BlogPost.objects.filter(published=True,featured=True)
 
     # get projects
     if Project.objects.filter(featured=True).count() >= 3:
@@ -178,12 +175,36 @@ def admin_user_view(request):
 
 @login_required
 def create_draft_post(request):
+    
     if request.method == "POST":
+        
         form = CreateDraftPostForm(request.POST, initial={"published": False})
 
         if form.is_valid():
-            form.save()
-            return redirect("view_posts_admin")
+            
+            # post not featured, don't need to check N featured posts
+            if not form.cleaned_data['featured']:
+
+                form.save()
+                
+                return redirect("view_posts_admin")
+            
+            # Request post to be featured - check not too many featured posts
+            current_featured_posts_count = BlogPost.objects.filter(featured=True).count()
+            
+            # already have too many posts
+            if current_featured_posts_count >= 3:
+                
+                messages.error(request,'Already have 3 featured posts! Un-feature at least one of them to make this a featured post.', extra_tags="danger")
+                
+                return render(request, "app_website/create_post.html", {"form": form})
+
+        else:
+            
+            messages.error(request, form.errors, extra_tags='danger')
+            
+            return render(request, 'app_website/create_post.html',{'form':form})
+            
 
     form = CreateDraftPostForm()
 
@@ -193,7 +214,7 @@ def create_draft_post(request):
 @login_required
 def view_posts_admin(request):
     
-    posts = BlogPost.objects.all().order_by("published")
+    posts = BlogPost.objects.all().order_by("published",'-posted_at')
 
     return render(request, "app_website/view_posts_admin.html", {"posts": posts})
 
@@ -203,12 +224,44 @@ def edit_post(request, post_id):
     post = BlogPost.objects.get(id=post_id)
 
     if request.method == "POST":
-        form = CreateDraftPostForm(request.POST, instance=post)
+        
+        form = EditPostForm(request.POST, instance=post)
+        
         if form.is_valid():
-            form.save()
-            return redirect("view_post", post_id=post_id)
+            
+            # post not featured, don't need to check N featured posts
+            if not form.cleaned_data['featured']:
 
-    form = CreateDraftPostForm(instance=post)
+
+                form.save()
+                
+                return redirect("view_post", post_id=post_id)
+            
+            # Request post to be featured - check not too many featured posts, excluding this post
+            current_featured_posts_count = BlogPost.objects.filter(featured=True).exclude(title=form.cleaned_data['title']).count()
+            
+            # already have too many posts
+            if current_featured_posts_count >= 3:
+        
+                
+                messages.error(request,'Already have 3 featured posts! Un-feature at least one of them to make this a featured post.', extra_tags="danger")
+                
+                return render(request, "app_website/edit_post.html", {"form": form})
+            
+            else:
+
+                form.save()
+                
+                return redirect("view_post", post_id=post_id)
+        
+        else:
+
+            messages.error(request, form.errors, extra_tags='danger')
+            
+            return render(request, 'app_website/edit_post.html',{'form':form})
+
+
+    form = EditPostForm(instance=post)
 
     return render(request, "app_website/edit_post.html", {"form": form})
 
