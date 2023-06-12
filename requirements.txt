@@ -6,3 +6,5 @@ requests
 markdown
 python-frontmatter
 psycopg2-binary
+
+gunicorn
