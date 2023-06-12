@@ -113,6 +113,14 @@ def run_blog_post_seed():
                     post.save()
                 else:
                     print(f"{BlogPost.objects.get(title=metadata['title'])} already exists. Skipping...")
+    
+    # Add first 3 as featured
+    posts = BlogPost.objects.all()[:3]
+    
+    for post in posts:
+        print(f'Setting {post} as featured')
+        post.featured = True
+        post.save()
 
 def delete_and_run_blog_post_seed():
     
