@@ -18,6 +18,9 @@
   --base-size-sm: 0.75rem;
   --golden-ratio-sm: 1.333;
 
+  /* FONT COLOR */
+  --markdown-p: #e2e2e2;
+
   --button-color-primary: #ffffff;
   --button-bg-color-secondary: #727171;
   --button-border-color-secondary: var(--button-bg-color-secondary);
@@ -302,6 +305,34 @@ section.featured-articles > .title-col {
   border-bottom: 1px solid var(--brand);
 }
 
+/* BLOG */
+.blog_row .btn-outline-primary {
+  border: none;
+}
+
+.item_date_meta {
+  font-size: 0.8rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 767.98px) {
+  /* CSS rules for mobile screens (sm breakpoint) */
+  div.page-title-wrapper {
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .read_btn span {
+    display: none;
+  }
+
+
+
+}
+
+
 /* // RECENT PROJECTS */
 section.recent-projects > .title-col {
   border-bottom: 1px solid var(--brand);
@@ -309,6 +340,10 @@ section.recent-projects > .title-col {
 
 .project-card .card-text {
   font-size: small;
+}
+
+.projct-card-col {
+  border-bottom: 1px solid var(--muted);
 }
 
 /* // CARDS */
@@ -349,7 +384,6 @@ section.recent-projects > .title-col {
 }
 .markdown-section .post-title-wrapper > h1 {
   letter-spacing: -0.1rem;
-  font-size: 3rem;
   font-weight: 800;
 }
 
@@ -364,13 +398,11 @@ section.recent-projects > .title-col {
 
 .markdown-section .post-content h1 {
   margin-top: 4rem;
-  font-size: 2.8rem;
   letter-spacing: -0.03rem;
   margin-top: 4rem;
 }
 
 .markdown-section .post-content h2 {
-  font-size: 2.3rem;
   letter-spacing: -0.03rem;
   margin-top: 4rem;
   margin-bottom: 1rem;
@@ -380,6 +412,7 @@ section.recent-projects > .title-col {
   margin-top: 1.5rem;
   margin-bottom: 0;
   margin-bottom: 1rem;
+  color: var(--markdown-p);
 }
 
 .markdown-section .post-content img {
@@ -390,9 +423,8 @@ section.recent-projects > .title-col {
 /* PAGES */
 
 .page-title-wrapper {
-  padding-top: 1.5rem !important;
-  padding-bottom: 1.5rem !important;
-  margin-top: 3rem !important;
+  padding-top: 1.5rem ;
+  margin-top: 3rem ;
 }
 .page-title-wrapper > h1 {
   line-height: 1.2;
@@ -413,6 +445,10 @@ section.recent-projects > .title-col {
 /* TABLES */
 .table.table-dark {
   --bs-table-bg: none;
+}
+
+.table.table-dark * {
+  border-style: none;
 }
 
 .table.table-dark:hover {

@@ -6,7 +6,7 @@
 {% block content %}
 <div class="row markdown-section justify-content-center">
     <div class="col">
-        <div class="post-title-wrapper py-4 mt-5">
+        <div class="post-title-wrapper py-md-4 mt-md-5">
             <p class="text-center github-link"><a href="{{ project.github }}"><i class="bi bi-github"></a></i></p>
             <h1 class="text-center">{{ project.title }}</h1>
         </div>
@@ -16,7 +16,7 @@
             </div>
 
         <div class="row justify-content-center">
-            <div class="col-10 post-content">
+            <div class="col-md-10 post-content">
                 {{ project.content | markdown | safe }}
             </div>
         </div>
