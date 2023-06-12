@@ -325,6 +325,12 @@ def publish_draft_post(request, post_id):
         {"post": post, "form": form, "subscriber_count": subscriber_count},
     )
 
+@login_required
+def view_projects_admin(request):
+    
+    projects = Project.objects.all().order_by('-posted_at')
+
+    return render(request, "app_website/view_projects_admin.html", {"projects": projects})
 
 @login_required
 def view_subscribers(request):

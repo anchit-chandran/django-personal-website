@@ -1,0 +1,38 @@
+{% extends 'app_website/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+
+        <div class="page-title-wrapper">
+            <h1 class="text-center">ADMIN VIEW - Manage Projects</h1>
+        </div>
+
+        <table class="table table-hover table-dark">
+            <thead>
+                <th>Date Published</th>
+                <th>Title</th>
+                <th>Featured</th>
+            </thead>
+            <tbody>
+                {% for project in projects %}
+                <tr>
+                    <td>{{ project.posted_at|date:"j M Y" }}</td>
+
+                    <td>{{ project.title }}</td>
+
+                    <td>{% if project.featured %}<i class="bi bi-check-circle-fill"></i>{% endif %}</td>
+
+                    <td class="read_btn_wrapper"> <a href="{% url 'view_project' project_id=project.id %}"
+                            class="read_btn btn btn-outline-primary btn-sm">View <i
+                                class="read_arrow bi bi-arrow-right"></i></a>
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock %}

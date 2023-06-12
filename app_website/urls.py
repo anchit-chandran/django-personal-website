@@ -15,6 +15,7 @@ urlpatterns = [
     path("admin_user", views.admin_user_view, name="admin_user_view"),
     path("create_draft_post", views.create_draft_post, name="create_draft_post"),
     path("admin/view_posts", views.view_posts_admin, name="view_posts_admin"),
+    path("admin/view_projects", views.view_projects_admin, name="view_projects_admin"),
     path("publish/<int:post_id>", views.publish_draft_post, name="publish_draft_post"),
     path("edit_post/<int:post_id>", views.edit_post, name="edit_post"),
     path("subscribers", views.view_subscribers, name="view_subscribers"),
