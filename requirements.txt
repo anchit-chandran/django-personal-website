@@ -8,4 +8,3 @@ python-frontmatter
 psycopg2-binary
 
 gunicorn
-dj-database-url
