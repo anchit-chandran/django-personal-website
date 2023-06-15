@@ -1,8 +1,8 @@
 # django-personal-website
 
-A personal website made in Django!
+A personal website made in Django, to replace my Ghost blog!
 
-![image](https://github.com/anchit-chandran/django-personal-website/assets/68898006/29267100-1ebf-49d7-b1b8-e7c55bb8dd42)
+![image](https://github.com/anchit-chandran/django-personal-website/assets/68898006/495fc386-1f75-4f9b-af03-8cb673091691)
 
 This website was made using Django and styled using Bootstrap5.
 
