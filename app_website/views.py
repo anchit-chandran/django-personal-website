@@ -112,6 +112,7 @@ def view_post(request, post_id):
 
 
 def view_project(request, project_id):
+    
     project = Project.objects.get(id=project_id)
 
     return render(request, "app_website/project.html", {"project": project})

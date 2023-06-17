@@ -27,6 +27,7 @@
   --button-color-secondary: var(--white);
 
   --pill-bg-color: #41060c;
+  --pill-bg-color-hover: #ba081a;
   --pill-text-color: #eaa7ba;
 
   --table-hover-bg: #41060c3d;
@@ -342,8 +343,13 @@ section.recent-projects > .title-col {
   font-size: small;
 }
 
-.projct-card-col {
+.project-card-col {
   border-bottom: 1px solid var(--muted);
+}
+
+.project-card-col:hover .badge.pill{
+  background-color: var(--pill-bg-color-hover);
+  color: var(--white);
 }
 
 /* // CARDS */
