@@ -20,6 +20,9 @@ from .constants import (
     DEFAULT_HEADER_IMG_URL,
 )
 from .forms import LoginForm, CreateDraftPostForm, PublishPostForm, SubscribeForm, EditSubscriberForm, EditPostForm
+from app_website.general_functions import (
+    get_first_p_from_md,
+)
 
 
 # Create your views here.
@@ -81,14 +84,9 @@ def index(request):
     else:
         featured_projects = Project.objects.all()[:3]
 
-    # get just the first para from the md content
     for project in featured_projects:
-        md_html = md.markdown(project.content)
-        p_close_tag_index = md_html.find("</p>") + 4
-        projects_first_p = md_html[:p_close_tag_index]
-
-        # assign to python project object .content attribute
-        project.content = projects_first_p
+        
+        project.content = get_first_p_from_md(project)
 
     # get subscribe modal form
     modal_form = SubscribeForm()
@@ -104,6 +102,11 @@ def index(request):
         },
     )
 
+def blog(request):
+    
+    posts = BlogPost.objects.filter(published=True).order_by("-posted_at")
+
+    return render(request, "app_website/blog.html", {"posts": posts})
 
 def view_post(request, post_id):
     post = BlogPost.objects.get(id=post_id)
@@ -125,22 +128,10 @@ def about(request):
 def projects(request):
     projects = Project.objects.all()
 
-    # get just the first para from the md content
     for project in projects:
-        md_html = md.markdown(project.content)
-        p_close_tag_index = md_html.find("</p>") + 4
-        projects_first_p = md_html[:p_close_tag_index]
-
-        # assign to python project object .content attribute
-        project.content = projects_first_p
+        project.content = get_first_p_from_md(project)
 
     return render(request, "app_website/projects.html", {"projects": projects})
-
-
-def blog(request):
-    posts = BlogPost.objects.filter(published=True).order_by("-posted_at")
-
-    return render(request, "app_website/blog.html", {"posts": posts})
 
 
 def contact(request):
