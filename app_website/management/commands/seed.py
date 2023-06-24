@@ -36,7 +36,7 @@ class Command(BaseCommand):
 
 def run_projects_seed():
     # Specify the directory path
-    directory = f"{settings.BASE_DIR}/app_website/projects"
+    directory = f"{settings.BASE_DIR}/app_website/seed_data/projects"
     
     # Iterate through all files in the directory
     for filename in os.listdir(directory):
@@ -87,7 +87,7 @@ def run_projects_seed():
 def run_blog_post_seed():
 
     # Specify the directory path
-    directory = f"{settings.BASE_DIR}/old-blog-markdown-json/posts"
+    directory = f"{settings.BASE_DIR}/app_website/seed_data/posts/md_posts"
 
     # Iterate through all files in the directory
     for filename in os.listdir(directory):
